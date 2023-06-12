@@ -1,0 +1,200 @@
+:root {
+    --background-color: #3aafa9;
+    --header-color: #17242a;
+    --container-color: #2b7a77;
+    --primary-color: #def2f1;
+    --secondary-color: #eedac1;
+    --alt-color: #13f5f5;
+}
+
+/* GENERAL CSS */
+strong{
+    color: #fff;
+}
+body {
+    width: 100%;
+    background-color: var(--background-color);
+    margin: 0 auto;
+    font-family:'Raleway', sans-serif;
+    color:var(--primary-color);
+}
+
+.btn {
+    margin-top: 20px;
+    padding: 10px 25px;
+    font-size: 20px;
+    color: #fff;
+    background: var(--header-color);
+    line-height: 1.5;
+    cursor: pointer;
+    border-radius: 30px;
+    border: none;
+    box-shadow: 0 0 0 transparent; /* Initial state with no shadow */
+    transition: box-shadow 0.5s ease;
+  }
+
+  .btn:hover {
+    box-shadow: 0 0 10px var(--alt-color); /* Apply shadow on hover */
+  }
+
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--header-color);
+    padding: 20px;
+}
+
+
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+}
+
+.navbar ul li {
+    margin-right: 10px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    padding: 8px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.navbar ul li a:hover {
+    background-color: #333;
+    color: var(--secondary-color);
+}
+
+/* LOGO */
+
+.logo {
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+
+/* Intro CSS */
+
+
+.intro {
+    margin:200px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    background:
+      linear-gradient(to right, black 8px, transparent 4px) 0 0,
+      linear-gradient(to left, black 8px, transparent 4px) 100% 100%,
+      linear-gradient(to bottom, black 8px, transparent 4px) 0 0,
+      linear-gradient(to top, black 8px, transparent 4px) 100% 100%;
+
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+}
+
+.intro p{
+    color: var(--primary-color);
+}
+
+.imgcontainer {
+    border: solid 10px var(--secondary-color);
+    border-radius: 50%;
+
+}
+
+.imgcontainer img {
+    width: 300px;
+    border-radius: 50%;
+
+}
+
+/* ABOUT CSS */
+
+.container{
+    border-top-left-radius: 37px 140px;
+    border-top-right-radius: 23px 130px;
+    border-bottom-left-radius: 110px 19px;
+    border-bottom-right-radius: 120px 24px;
+
+    display: flex;
+    justify-content: center;
+    background-color:var(--container-color) ;
+    border: solid 3px var(--header-color);
+    padding: 40px 60px;
+    width: 70%;
+    margin: 200px auto 0;
+    line-height: 2rem;
+    box-shadow: 3px 15px 8px -10px rgba(0, 0, 0, 0.3);
+    transition: all 0.13s ease-in;
+
+}
+.container.transitioneffect:hover {
+  transform: translateY(-10px) rotate(1deg);
+  box-shadow: 3px 15px 8px -10px rgba(0, 0, 0, 0.3);
+}
+
+
+.aboutsection1{
+    padding: 0 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.aboutsection1 img{
+    border: solid 2px black;
+    border-radius: 20px;
+}
+
+
+
+  .aboutsection2 button {
+    margin: 0 30px auto 0;
+  }
+
+  /* TIMELINE CSS */
+  .timeline{
+    /* background-color: red; */
+    margin-top: 80px;
+    display: flex;
+    justify-content:space-evenly;
+    align-items: center;
+  }
+
+
+  .timelinebtn{
+    color:#fff;
+    background: var(--header-color);
+    border: none;
+    padding: 10px 30px;
+    transform: skewX(-40deg);
+    cursor: pointer;
+    transition: all 0.7s ease;
+  }
+
+  .timelinebtn:hover{
+   color: var(--alt-color);
+  }
+
+  .timelinebtn p {
+    margin: 0 auto;
+    transform: skewX(40deg);
+  }
+
+/* CAROUSEL CSS */
+  .carouselinner a{
+    color:black;
+  }
+  .carouselinner a:hover{
+    color:white;
+  }
+
+  .carouselinner .thumbItem{
+    background-color: red;
+  }
