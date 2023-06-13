@@ -32,11 +32,11 @@
   padding: 15px 30px;
   position: relative;
   background: inherit;
-  width: 60%;
+  width: 50%;
 }
 
 .container.left {
-  left: -10%;
+  left: 0%;
 }
 
 .container.right {
@@ -76,6 +76,7 @@
 }
 
 .container .date {
+
   position: absolute;
   display: inline-block;
   top: calc(50% - 15px);
@@ -88,13 +89,21 @@
   z-index: 1;
 }
 
-.container.left .date {
-  right: -140px;
-}
+.container .date {
+    position: absolute;
+  }
 
-.container.right .date {
-  left: -140px;
-}
+  .container.left .date {
+    right: var(--date-offset, -140px);
+  }
+
+  .container.right .date {
+    left: var(--date-offset, -140px);
+  }
+
+  .container.education .date {
+    --date-offset: -60px;
+  }
 
 .container .icon {
   position: absolute;
@@ -128,7 +137,7 @@
 }
 
 .container.right .content {
-  padding: 30px 30px 30px 90px;
+  padding: 50px 30px 30px 130px;
   border-radius: 500px 0 0 500px;
 }
 
