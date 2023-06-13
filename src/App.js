@@ -13,7 +13,6 @@ function App() {
       <Header></Header>
       <Intro></Intro>
       <About></About>
-      {/* <TimelineOptions></TimelineOptions> */}
       <TimelineContent></TimelineContent>
     </div>
   );
