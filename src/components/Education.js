@@ -3,8 +3,8 @@ import timeline from "./timeline.module.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGraduationCap } from '@fortawesome/free-solid-svg-icons';
 function Education() {
-  return (
-    <div>
+    return (
+        <div>
             <div className={timeline.timeline}>
                 <div className={`${timeline.container} ${timeline.left} ${timeline.education}`}>
                     <div className={timeline.date}>2023</div>
@@ -30,7 +30,7 @@ function Education() {
                     <div className={timeline.date}>2022</div>
                     <i className={`${timeline.icon}`}><FontAwesomeIcon icon={faGraduationCap} /></i>
                     <div className={timeline.content}>
-                    <h2>MERIT AMERICA IT BOOTCAMP</h2>
+                        <h2>MERIT AMERICA IT BOOTCAMP</h2>
                         <h5>Skills Learned:</h5>
                         <hr></hr>
 
@@ -50,8 +50,8 @@ function Education() {
                     <div className={timeline.date}>2021</div>
                     <i className={`${timeline.icon}`}><FontAwesomeIcon icon={faGraduationCap} /></i>
                     <div className={timeline.content}>
-                    <h2>ASSOCIATE OF APPLIED SCIENCE / COMPUTER SCIENCE</h2>
-                    <p>Cumulative GPA: 4.0/4.0</p>
+                        <h2>ASSOCIATE OF APPLIED SCIENCE / COMPUTER SCIENCE</h2>
+                        <p>Cumulative GPA: 4.0/4.0</p>
                         <h5>Skills Learned:</h5>
                         <hr></hr>
 
@@ -70,8 +70,8 @@ function Education() {
                     <div className={timeline.date}>2016</div>
                     <i className={`${timeline.icon} ${timeline.fa} ${timeline['fa-home']}`}><FontAwesomeIcon icon={faGraduationCap} /></i>
                     <div className={timeline.content}>
-                    <h2>BACHELOR’S DEGREE IN BUSINESS ADMINISTRATION / HUMAN RESOURCE MANAGEMENT</h2>
-                    <p>Cumulative GPA: 3.5/4.0</p>
+                        <h2>BACHELOR’S DEGREE IN BUSINESS ADMINISTRATION / HUMAN RESOURCE MANAGEMENT</h2>
+                        <p>Cumulative GPA: 3.5/4.0</p>
                         <h5>Recruitment and Selection</h5>
                         <hr></hr>
 
@@ -83,14 +83,13 @@ function Education() {
 
                         <p>HR Policies and Compliance</p>
 
-                        <p>Recruitment and Selection
-</p>
+                        <p>Recruitment and Selection</p>
                     </div>
                 </div>
 
-               </div>
+            </div>
         </div>
-  )
+    )
 }
 
 export default Education

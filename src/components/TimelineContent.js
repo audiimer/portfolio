@@ -4,6 +4,7 @@ import Test from './Carousel'
 import Experience from './Experience'
 import Education from './Education'
 import TimelineOptions from './TimelineOptions'
+import Certification from './Certification'
 
 function TimelineContent() {
   return (
@@ -14,14 +15,14 @@ function TimelineContent() {
         <div>
             <TimelineOptions></TimelineOptions>
             <section>
-                <Experience></Experience>
+                {/* <Experience></Experience> */}
             </section>
         </div>
         <div>
-            <section><Education></Education></section>
+            {/* <section><Education></Education></section> */}
         </div>
         <div>
-            <section></section>
+            <section><Certification></Certification></section>
         </div>
 
     </div>
