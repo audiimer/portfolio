@@ -5,17 +5,19 @@
     --primary-color: #def2f1;
     --secondary-color: #eedac1;
     --alt-color: #13f5f5;
+
 }
 
 /* GENERAL CSS */
 strong{
     color: #fff;
 }
-body {
+
+.bodyContainer {
     width: 100%;
     background-color: var(--background-color);
     margin: 0 auto;
-    font-family:'Raleway', sans-serif;
+    font-family:'Raleway', sans-serif ;
     color:var(--primary-color);
 }
 
@@ -188,13 +190,21 @@ body {
   }
 
 /* CAROUSEL CSS */
-  .carouselinner a{
-    color:black;
+
+
+  .carouselInner {
+    position: relative;
+    border-radius: 100px;
+    padding: 5px 0;
+    top: 35px;
+    background-color: rgba(0, 0, 0, 0.5);
   }
-  .carouselinner a:hover{
-    color:white;
+  .carouselInner button{
+    margin: 0 auto;
+
+
   }
 
-  .carouselinner .thumbItem{
+  .test{
     background-color: red;
   }

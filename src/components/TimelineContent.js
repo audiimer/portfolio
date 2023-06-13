@@ -1,15 +1,18 @@
 import React from 'react'
 import styles from "../styles.module.css"
-import Slider from './Slider'
+import Test from './Carousel'
+import Experience from './Experience'
 
 function TimelineContent() {
   return (
     <div>
-        <div className={styles.container}>
-            <Slider></Slider>
-        </div>
+        {/* <div className={styles.container}>
+            <Carousel</Carousel>
+        </div> */}
         <div>
-            <section></section>
+            <section>
+                <Experience></Experience>
+            </section>
         </div>
         <div>
             <section></section>
