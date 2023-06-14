@@ -25,7 +25,7 @@ function Header({ setActiveComponent, activeButton, setActiveButton }) {
             <a href="/">Home</a>
           </li>
           <li>
-            <a href="/about">About</a>
+            <a href="#about">About</a>
           </li>
           <li>
             <a href="#options" onClick={(event) => handleLinkClick(event, "projects")}>
@@ -46,9 +46,6 @@ function Header({ setActiveComponent, activeButton, setActiveButton }) {
             <a href="#options" onClick={(event) => handleLinkClick(event, "certification")}>
               Certification
             </a>
-          </li>
-          <li>
-            <a href="/contact">Contact</a>
           </li>
         </ul>
       </nav>

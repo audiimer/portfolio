@@ -45,9 +45,9 @@ const CarouselComponent = () => {
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const updateActiveItem = (index) => {
-    setCurrentIndex(index);
-  };
+  // const updateActiveItem = (index) => {
+  //   setCurrentIndex(index);
+  // };
 
   const handlePrevClick = () => {
     setCurrentIndex((prevIndex) => {

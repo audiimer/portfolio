@@ -1,0 +1,52 @@
+/* Reusable Color Variables */
+:root {
+    --background-color: #3aafa9;
+    --header-color: #17242a;
+    --container-color: #2b7a77;
+    --primary-color: #def2f1;
+    --secondary-color: #eedac1;
+    --alt-color: #13f5f5;
+}
+
+
+.modal {
+    color: black;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--secondary-color);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    width: 90%;
+  }
+
+  .modal hr{
+    background-color: var(--container-color);
+  }
+
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .closeBtn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 5px;
+    background: none;
+    border: none;
+    font-size: 16px;
+    color: #999;
+    cursor: pointer;
+  }

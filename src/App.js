@@ -9,18 +9,23 @@ import Certification from "./components/Certification";
 import TimelineOptions from "./components/TimelineOptions";
 import styles from "./styles.module.css";
 
+
+
 function App() {
   const [activeComponent, setActiveComponent] = useState("projects");
   const [activeButton, setActiveButton] = useState("projects");
   const [isFadingOut, setIsFadingOut] = useState(false);
 
-  const handleComponentClick = (component) => {
-    setIsFadingOut(true);
 
-    setTimeout(() => {
-      setActiveComponent(component);
-      setIsFadingOut(false);
-    }, 300);
+  const handleComponentClick = (component) => {
+    if (component !== activeComponent) {
+      setIsFadingOut(true);
+
+      setTimeout(() => {
+        setActiveComponent(component);
+        setIsFadingOut(false);
+      }, 300);
+    }
   };
 
   const renderComponent = () => {
@@ -56,21 +61,22 @@ function App() {
 
   return (
     <div className={styles.bodyContainer}>
-      <Header
-        setActiveComponent={handleComponentClick}
-        activeButton={activeButton}
-        setActiveButton={setActiveButton}
-      />
-      <Intro></Intro>
-      <About></About>
-      <TimelineOptions
-        setActiveComponent={handleComponentClick}
-        activeButton={activeButton}
-        setActiveButton={setActiveButton}
-      />
+  <Header
+    setActiveComponent={handleComponentClick}
+    activeButton={activeButton}
+    setActiveButton={setActiveButton}
+  />
 
-      {renderComponent()}
-    </div>
+  <Intro />
+  <About />
+  <TimelineOptions
+    setActiveComponent={handleComponentClick}
+    activeButton={activeButton}
+    setActiveButton={setActiveButton}
+  />
+
+  {renderComponent()}
+</div>
   );
 }
 

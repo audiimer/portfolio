@@ -10,10 +10,10 @@ function Intro() {
                     <p>Hello!</p>
                     <h1>I'm Audis Mercado</h1>
                     <h3>Computer Science Graduate & Self-Taught Programmer</h3>
-                    <button className={styles.btn}>About Me</button>
+                    <a className={styles.btn} href='#about'>About Me</a>
                 </section>
                 <section className={styles.imgcontainer}>
-                    <img src={logo} alt="Image"  />
+                    <img src={logo} alt="intropic"  />
                 </section>
             </div>
         </div>
