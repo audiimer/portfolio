@@ -1,14 +1,22 @@
-import React from 'react';
+
 import styles from '../styles.module.css';
 import Logo from './Logo';
+import { Anchor } from 'antd';
+import React from 'react';
+const { Link } = Anchor;
 
+function Header({ setActiveComponent }) {
+  function preventDefault(event) {
+    event.preventDefault();
+  }
 
-function Header() {
   return (
+
     <div className={styles.header}>
       <div className={styles.logoArea}>
         <Logo></Logo>
       </div>
+
       <nav className={styles.navbar}>
         <ul>
           <li>
@@ -18,22 +26,50 @@ function Header() {
             <a href="/about">About</a>
           </li>
           <li>
-            <a href="/projects" >
+          <a href="#options" onClick={(event) => {
+              event.preventDefault();
+              const timelineOptionsElement = document.getElementById('options');
+              if (timelineOptionsElement) {
+                timelineOptionsElement.scrollIntoView();
+                setActiveComponent("projects");
+              }
+            }}>
               Projects
             </a>
           </li>
           <li>
-            <a href="/experience" >
+          <a href="#options" onClick={(event) => {
+              event.preventDefault();
+              const timelineOptionsElement = document.getElementById('options');
+              if (timelineOptionsElement) {
+                timelineOptionsElement.scrollIntoView();
+                setActiveComponent("experience");
+              }
+            }}>
               Experience
             </a>
           </li>
           <li>
-            <a href="/education" >
+          <a href="#options" onClick={(event) => {
+              event.preventDefault();
+              const timelineOptionsElement = document.getElementById('options');
+              if (timelineOptionsElement) {
+                timelineOptionsElement.scrollIntoView();
+                setActiveComponent("education");
+              }
+            }}>
               Education
             </a>
           </li>
           <li>
-            <a href="/certification" >
+            <a href="#options" onClick={(event) => {
+              event.preventDefault();
+              const timelineOptionsElement = document.getElementById('options');
+              if (timelineOptionsElement) {
+                timelineOptionsElement.scrollIntoView();
+                setActiveComponent("certification");
+              }
+            }}>
               Certification
             </a>
           </li>
@@ -42,6 +78,11 @@ function Header() {
           </li>
         </ul>
       </nav>
+
+
+
+
+
     </div>
   );
 }

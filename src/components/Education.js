@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGraduationCap } from '@fortawesome/free-solid-svg-icons';
 function Education() {
     return (
-        <div>
+        <div id='education'>
             <div className={timeline.timeline}>
                 <div className={`${timeline.container} ${timeline.left} ${timeline.education}`}>
                     <div className={timeline.date}>2023</div>

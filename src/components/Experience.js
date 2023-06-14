@@ -1,5 +1,4 @@
 import React from 'react'
-import styles from "../styles.module.css"
 import timeline from "./timeline.module.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBriefcase } from '@fortawesome/free-solid-svg-icons';
@@ -7,7 +6,7 @@ import { faBriefcase } from '@fortawesome/free-solid-svg-icons';
 
 function Experience() {
     return (
-        <div>
+        <div id='experience'>
             <div className={timeline.timeline}>
                 <div className={`${timeline.container} ${timeline.left}`}>
                     <div className={timeline.date}>2022 - 2023</div>

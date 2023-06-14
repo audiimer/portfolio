@@ -4,7 +4,7 @@ import profile from "../images/profilepic.jpg"
 
 function About() {
     return (
-        <div>
+        <div id='about'>
             <div className={`${styles.container} ${styles.transitioneffect}`}>
                 <span className={styles.bordertl}></span>
                 <span className={styles.bordertr}></span>

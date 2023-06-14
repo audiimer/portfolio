@@ -1,20 +1,36 @@
-import React from 'react'
-import styles from "../styles.module.css"
+import React from 'react';
+import styles from "../styles.module.css";
 
-function TimelineOptions({ setActiveComponent }) {
+function TimelineOptions({ setActiveComponent, activeComponent }) {
+  const isActive = (component) => {
+    return component === activeComponent ? styles.active : '';
+  };
+
   return (
-    <div>
+    <div id='options'>
       <section className={styles.timeline}>
-        <button className={styles.timelinebtn} onClick={() => setActiveComponent("projects")}>
+        <button
+          className={`${styles.timelinebtn} ${isActive('projects')}`}
+          onClick={() => setActiveComponent('projects')}
+        >
           <p>Projects</p>
         </button>
-        <button className={styles.timelinebtn} onClick={() => setActiveComponent("experience")}>
+        <button
+          className={`${styles.timelinebtn} ${isActive('experience')}`}
+          onClick={() => setActiveComponent('experience')}
+        >
           <p>Experience</p>
         </button>
-        <button className={styles.timelinebtn} onClick={() => setActiveComponent("education")}>
+        <button
+          className={`${styles.timelinebtn} ${isActive('education')}`}
+          onClick={() => setActiveComponent('education')}
+        >
           <p>Education</p>
         </button>
-        <button className={styles.timelinebtn} onClick={() => setActiveComponent("certification")}>
+        <button
+          className={`${styles.timelinebtn} ${isActive('certification')}`}
+          onClick={() => setActiveComponent('certification')}
+        >
           <p>Certification</p>
         </button>
       </section>
@@ -22,4 +38,4 @@ function TimelineOptions({ setActiveComponent }) {
   );
 }
 
-export default TimelineOptions
+export default TimelineOptions;

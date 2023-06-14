@@ -69,7 +69,7 @@ const CarouselComponent = () => {
 
   return (
 
-    <div className={styles.carousel}>
+    <div className={styles.carousel} id='projects'>
       <div className={styles.carouselInner}>
         {carouselItems.map((item, index) => (
           <div

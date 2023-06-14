@@ -5,7 +5,7 @@ import { faTrophy} from '@fortawesome/free-solid-svg-icons';
 
 function Certification() {
   return (
-    <div>
+    <div id='certification'>
     <div className={timeline.timeline}>
         <div className={`${timeline.container} ${timeline.left} ${timeline.education}`}>
             <div className={timeline.date}>2022</div>
