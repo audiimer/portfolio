@@ -7,12 +7,11 @@ import Experience from "./components/Experience";
 import Education from "./components/Education";
 import Certification from "./components/Certification";
 import TimelineOptions from "./components/TimelineOptions";
-import styles from "./styles.module.css"
-
+import styles from "./styles.module.css";
 
 function App() {
-
   const [activeComponent, setActiveComponent] = useState("projects");
+  const [activeButton, setActiveButton] = useState("projects");
   const [isFadingOut, setIsFadingOut] = useState(false);
 
   const handleComponentClick = (component) => {
@@ -22,7 +21,6 @@ function App() {
       setActiveComponent(component);
       setIsFadingOut(false);
     }, 300);
-
   };
 
   const renderComponent = () => {
@@ -35,16 +33,22 @@ function App() {
         );
       case "experience":
         return (
-        <div className={isFadingOut ? styles.fadeOut : styles.fadeIn}><Experience /></div>
+          <div className={isFadingOut ? styles.fadeOut : styles.fadeIn}>
+            <Experience />
+          </div>
         );
       case "education":
         return (
-          <div className={isFadingOut ? styles.fadeOut : styles.fadeIn}><Education /></div>
-          );
+          <div className={isFadingOut ? styles.fadeOut : styles.fadeIn}>
+            <Education />
+          </div>
+        );
       case "certification":
         return (
-          <div className={isFadingOut ? styles.fadeOut : styles.fadeIn}><Certification /></div>
-          );
+          <div className={isFadingOut ? styles.fadeOut : styles.fadeIn}>
+            <Certification />
+          </div>
+        );
       default:
         return null;
     }
@@ -52,13 +56,22 @@ function App() {
 
   return (
     <div className={styles.bodyContainer}>
-      <Header setActiveComponent={handleComponentClick}></Header>
+      <Header
+        setActiveComponent={handleComponentClick}
+        activeButton={activeButton}
+        setActiveButton={setActiveButton}
+      />
       <Intro></Intro>
       <About></About>
-      <TimelineOptions setActiveComponent={handleComponentClick} />
+      <TimelineOptions
+        setActiveComponent={handleComponentClick}
+        activeButton={activeButton}
+        setActiveButton={setActiveButton}
+      />
 
       {renderComponent()}
     </div>
   );
 }
+
 export default App;

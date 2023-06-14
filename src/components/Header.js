@@ -1,17 +1,19 @@
-
+import React from 'react';
 import styles from '../styles.module.css';
 import Logo from './Logo';
-import { Anchor } from 'antd';
-import React from 'react';
-const { Link } = Anchor;
 
-function Header({ setActiveComponent }) {
-  function preventDefault(event) {
+function Header({ setActiveComponent, activeButton, setActiveButton }) {
+  const handleLinkClick = (event, component) => {
     event.preventDefault();
-  }
+    const timelineOptionsElement = document.getElementById('options');
+    if (timelineOptionsElement) {
+      timelineOptionsElement.scrollIntoView();
+      setActiveComponent(component);
+      setActiveButton(component);
+    }
+  };
 
   return (
-
     <div className={styles.header}>
       <div className={styles.logoArea}>
         <Logo></Logo>
@@ -26,50 +28,22 @@ function Header({ setActiveComponent }) {
             <a href="/about">About</a>
           </li>
           <li>
-          <a href="#options" onClick={(event) => {
-              event.preventDefault();
-              const timelineOptionsElement = document.getElementById('options');
-              if (timelineOptionsElement) {
-                timelineOptionsElement.scrollIntoView();
-                setActiveComponent("projects");
-              }
-            }}>
+            <a href="#options" onClick={(event) => handleLinkClick(event, "projects")}>
               Projects
             </a>
           </li>
           <li>
-          <a href="#options" onClick={(event) => {
-              event.preventDefault();
-              const timelineOptionsElement = document.getElementById('options');
-              if (timelineOptionsElement) {
-                timelineOptionsElement.scrollIntoView();
-                setActiveComponent("experience");
-              }
-            }}>
+            <a href="#options" onClick={(event) => handleLinkClick(event, "experience")}>
               Experience
             </a>
           </li>
           <li>
-          <a href="#options" onClick={(event) => {
-              event.preventDefault();
-              const timelineOptionsElement = document.getElementById('options');
-              if (timelineOptionsElement) {
-                timelineOptionsElement.scrollIntoView();
-                setActiveComponent("education");
-              }
-            }}>
+            <a href="#options" onClick={(event) => handleLinkClick(event, "education")}>
               Education
             </a>
           </li>
           <li>
-            <a href="#options" onClick={(event) => {
-              event.preventDefault();
-              const timelineOptionsElement = document.getElementById('options');
-              if (timelineOptionsElement) {
-                timelineOptionsElement.scrollIntoView();
-                setActiveComponent("certification");
-              }
-            }}>
+            <a href="#options" onClick={(event) => handleLinkClick(event, "certification")}>
               Certification
             </a>
           </li>
@@ -78,11 +52,6 @@ function Header({ setActiveComponent }) {
           </li>
         </ul>
       </nav>
-
-
-
-
-
     </div>
   );
 }

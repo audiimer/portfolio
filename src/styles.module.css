@@ -184,10 +184,9 @@ strong {
 }
 .timelinebtn.active{
   color: var(--alt-color);
+
 }
-.timelinebtn.inactive{
-  color: red;
-}
+
 .timelinebtn p {
   margin: 0 auto;
   transform: skewX(40deg);

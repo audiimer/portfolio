@@ -1,35 +1,36 @@
 import React from 'react';
-import styles from "../styles.module.css";
+import styles from '../styles.module.css';
 
-function TimelineOptions({ setActiveComponent, activeComponent }) {
-  const isActive = (component) => {
-    return component === activeComponent ? styles.active : '';
+function TimelineOptions({ setActiveComponent, activeButton, setActiveButton }) {
+  const handleButtonClick = (component) => {
+    setActiveComponent(component);
+    setActiveButton(component);
   };
 
   return (
-    <div id='options'>
+    <div id="options">
       <section className={styles.timeline}>
         <button
-          className={`${styles.timelinebtn} ${isActive('projects')}`}
-          onClick={() => setActiveComponent('projects')}
+          className={`${styles.timelinebtn} ${activeButton === "projects" ? styles.active : ''}`}
+          onClick={() => handleButtonClick("projects")}
         >
           <p>Projects</p>
         </button>
         <button
-          className={`${styles.timelinebtn} ${isActive('experience')}`}
-          onClick={() => setActiveComponent('experience')}
+          className={`${styles.timelinebtn} ${activeButton === "experience" ? styles.active : ''}`}
+          onClick={() => handleButtonClick("experience")}
         >
           <p>Experience</p>
         </button>
         <button
-          className={`${styles.timelinebtn} ${isActive('education')}`}
-          onClick={() => setActiveComponent('education')}
+          className={`${styles.timelinebtn} ${activeButton === "education" ? styles.active : ''}`}
+          onClick={() => handleButtonClick("education")}
         >
           <p>Education</p>
         </button>
         <button
-          className={`${styles.timelinebtn} ${isActive('certification')}`}
-          onClick={() => setActiveComponent('certification')}
+          className={`${styles.timelinebtn} ${activeButton === "certification" ? styles.active : ''}`}
+          onClick={() => handleButtonClick("certification")}
         >
           <p>Certification</p>
         </button>
