@@ -11,11 +11,12 @@
 /* -------------------------------------------------------GENERAL CSS--------------------------------------------------------------- */
 body {
   margin: 0 auto;
-  background: linear-gradient(110deg, var(--background-color)30%, var(--secondary-color)90%);
+  background: linear-gradient(80deg, var(--background-color)30%, var(--secondary-color)90%);
   font-family: 'Raleway', sans-serif;
   color: var(--primary-color);
   letter-spacing: 0.09em;
-  font-size: 12px;
+  font-size: .7rem;
+  line-height: 1.5;
 }
 
 strong {
@@ -24,10 +25,8 @@ strong {
 
 .btn {
   margin-top: 20px;
-
-
   padding: 10px 25px;
-  font-size: 20px;
+  font-size: 1rem;
   color: #fff;
   background: var(--header-color);
   line-height: 1.5;
@@ -62,12 +61,12 @@ strong {
 
 /* -------------------------------------------------------NAVBAR--------------------------------------------------------------- */
 .hamburger {
-  border: 0;
+  border: solid 2px rgb(15, 7, 7);
   height: 40px;
   width: 40px;
   padding: 0.5rem;
   border-radius: 50%;
-  background-color: #283b8b;
+  background-color: #222525;
   cursor: pointer;
   transition: background-color 0.2s ease-in-out;
   position: absolute;
@@ -78,7 +77,7 @@ strong {
 }
 
 .hamburger:hover {
-  background-color: #2642af;
+  background-color: var(--background-color);
 }
 
 .navigationMenu {
@@ -106,7 +105,7 @@ strong {
 .navbar ul li a {
   display: block;
   width: 100%;
-  font-size: 18px;
+  font-size: 1rem;
   text-decoration: none;
   color: #fff;
   font-weight: bold;
@@ -218,26 +217,21 @@ strong {
   font-size: 2.5rem;
 }
 
-
 .imgcontainer {
   border: solid 10px var(--secondary-color);
   border-radius: 50%;
-
 }
 
 .imgcontainer img {
   width: 400px;
   border-radius: 50%;
-
 }
-
 
 .introTitle {
   list-style: none;
   padding: 0;
   max-width: 600px;
 }
-
 
 .introTitle a {
   font-size: 1.5em;
@@ -280,8 +274,8 @@ strong {
   justify-content: center;
   background-color: var(--container-color);
   border: solid 3px var(--header-color);
-  padding: 40px 60px;
-  width: 60%;
+  padding: 0 60px 50px 60px;
+  width: 70%;
   margin: 200px auto 200px;
 
   line-height: 2rem;
@@ -296,12 +290,21 @@ strong {
   flex-direction: column;
   align-items: center;
   text-align: center;
+  height: 80vh;
+  justify-content: center;
 }
 
 
 .aboutsection1 img {
+  width: 250px;
+  height: 300px;
   border: solid 2px black;
   border-radius: 20px;
+}
+
+.aboutsection2 {
+  font-size: .9rem;
+  margin-top:110px;
 }
 
 .aboutsection2 button {
@@ -385,7 +388,7 @@ strong {
 .carouselImage {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: fill;
 }
 
 .carouselCaption {
@@ -854,15 +857,6 @@ strong {
 
   /* CAROUSEL CSS */
 
-  .carouselInner {
-    height: 530px;
-  }
-
-  .carouselCaption {
-    width: 90%;
-    padding: 15px 30px;
-  }
-
   .carouselControlPrev,
   .carouselControlNext {
     border-radius: 10%;
@@ -874,25 +868,6 @@ strong {
 
 /* -----------------------------------------------LARGE DEVICES(LAPTOPS, DESKTOPS)--------------------------------------------------------- */
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
-
-  .btnContainer {
-    display: flex;
-    justify-content: space-between;
-
-  }
-
-  .btn:hover {
-    box-shadow: 0 0 10px var(--alt-color);
-  }
-
-  /* LOGO */
-
-  .logo {
-    color: #fff;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    font-size: 12px;
-  }
-
 
   .intro {
     margin: 100px 60px 300px 60px;
@@ -908,32 +883,41 @@ strong {
   }
 
   /* ABOUT CSS */
-
   .container {
     width: 80%;
     display: block;
+    padding-top: 30px;
+
+  }
+
+  .aboutsection1 {
+    padding: 0 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    height: auto;
+    justify-content: center;
+  }
+
+
+  .aboutsection1 img {
+    width: 250px;
+    height: 300px;
+    border: solid 2px black;
+    border-radius: 20px;
   }
 
   .aboutsection2 {
-    margin: 20px -10px;
+    font-size: .9rem;
+    margin-top:60px;
   }
 
-  .aboutsection1 img {
-    width: 300px;
+  .aboutsection2 button {
+    margin: 0 30px auto 0;
   }
 
 
-  /* CAROUSEL CSS */
-
-  .carouselInner {
-    position: relative;
-    height: 530px;
-  }
-
-  .carouselCaption {
-    width: 92.4%;
-    padding: 15px 30px;
-  }
 
 }
 

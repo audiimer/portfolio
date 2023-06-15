@@ -38,7 +38,7 @@ function About() {
                     </a>
                 </section>
                 <section className={styles.aboutsection2}>
-                    <h3>console.log("Hello, World!");</h3>
+                    <h1>console.log("Hello, World!");</h1>
 
                     <p>My name is Audis Mercado. I hold a <strong>Bachelor in Business Administration / Human Resource Management</strong>,
                         an <strong>Associate of Applied Sciences in Computer Science</strong>, and have completed
