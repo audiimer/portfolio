@@ -32,7 +32,7 @@ function App() {
     switch (activeComponent) {
       case "projects":
         return (
-          <div className={`${styles.container} ${isFadingOut ? styles.fadeOut : styles.fadeIn}`}>
+          <div className={isFadingOut ? styles.fadeOut : styles.fadeIn}>
             <CarouselComponent />
           </div>
         );
@@ -61,11 +61,11 @@ function App() {
 
   return (
     <div className={styles.bodyContainer}>
-  <Header
-    setActiveComponent={handleComponentClick}
-    activeButton={activeButton}
-    setActiveButton={setActiveButton}
-  />
+      <Header
+        setActiveComponent={handleComponentClick}
+        activeButton={activeButton}
+        setActiveButton={setActiveButton}
+      />
 
   <Intro />
   <About />

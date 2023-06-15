@@ -1,8 +1,9 @@
-import React from 'react';
+import React,{ useState }  from 'react';
 import styles from '../styles.module.css';
 import Logo from './Logo';
 
 function Header({ setActiveComponent, activeButton, setActiveButton }) {
+  const [isNavExpanded, setIsNavExpanded] = useState(false)
   const handleLinkClick = (event, component) => {
     event.preventDefault();
     const timelineOptionsElement = document.getElementById('options');
@@ -15,11 +16,28 @@ function Header({ setActiveComponent, activeButton, setActiveButton }) {
 
   return (
     <div className={styles.header}>
+
+      <nav className={styles.navbar}>
       <div className={styles.logoArea}>
         <Logo></Logo>
       </div>
-
-      <nav className={styles.navbar}>
+        <button className={styles.hamburger}  onClick={() => {
+          setIsNavExpanded(!isNavExpanded);
+        }}><svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="h-5 w-5"
+          viewBox="0 0 20 20"
+          fill="white"
+        >
+          <path
+            fillRule="evenodd"
+            d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z"
+            clipRule="evenodd"
+          />
+        </svg></button>
+        <div className={
+          isNavExpanded ? `${styles.navigationMenu} ${styles.expanded}` : styles.navigationMenu}
+        >
         <ul>
           <li>
             <a href="/">Home</a>
@@ -48,6 +66,7 @@ function Header({ setActiveComponent, activeButton, setActiveButton }) {
             </a>
           </li>
         </ul>
+        </div>
       </nav>
     </div>
   );

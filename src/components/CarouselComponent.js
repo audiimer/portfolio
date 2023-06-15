@@ -1,42 +1,48 @@
 import React, { useState } from 'react';
 import styles from '../styles.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowRight, faArrowLeft} from '@fortawesome/free-solid-svg-icons';
+import { faArrowRight, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
 const CarouselComponent = () => {
   const carouselItems = [
     {
-      image: require('../images/projects/vending-machine.png'),
+      imageMobile: require('../images/projects/mobile/vending-machine.png'),
+      imageDesktop: require('../images/projects/desktop/vending-machine.png'),
       title: 'Vending Machine',
       description: 'The vending machine app features a sophisticated product inventory system and a secure PIN authentication mechanism.',
       codeSource: 'https://github.com/audiimer/vending-machine',
     },
     {
-      image: require('../images/projects/tic-tac-toe.png'),
+      imageMobile: require('../images/projects/mobile/tic-tac-toe.png'),
+      imageDesktop: require('../images/projects/desktop/tic-tac-toe.png'),
       title: 'Tic Tac Toe',
       description: 'Classic Tic Tac Toe app with dynamic gameplay against human or AI opponents, with customizable symbol selection of X or O.',
       codeSource: 'https://github.com/audiimer/tic-tac-toe-beta',
     },
     {
-      image: require('../images/projects/todo-list.png'),
+      imageMobile: require('../images/projects/mobile/todo-list.png'),
+      imageDesktop: require('../images/projects/desktop/todo-list.png'),
       title: 'Todo list',
       description: 'This app represents a simple todo list where you can add or remove items from the list.',
-      codeSource: 'https://github.com/audiimer/palindrome-app',
+      codeSource: 'https://github.com/audiimer/todo-list-react',
     },
     {
-      image: require('../images/projects/first-portfolio.png'),
+      imageMobile: require('../images/projects/mobile/first-portfolio.png'),
+      imageDesktop: require('../images/projects/desktop/first-portfolio.png'),
       title: 'First Portfolio',
       description: 'This was the first portfolio I created using plain HTML/CSS and JavaScript.',
-      codeSource: 'https://github.com/audiimer/palindrome-app',
+      codeSource: 'https://github.com/audiimer/first-portfolio',
     },
     {
-      image: require('../images/projects/palindrome.png'),
+      imageMobile: require('../images/projects/mobile/palindrome.png'),
+      imageDesktop: require('../images/projects/desktop/palindrome.png'),
       title: 'Palindrome Checker',
       description: 'The palindrome checker app accepts user input and employs an algorithm to determine whether the entered word qualifies as a palindrome.',
       codeSource: 'https://github.com/audiimer/palindrome-app',
     },
     {
-      image: require('../images/projects/google-drive-download.png'),
+      imageMobile: require('../images/projects/mobile/google-drive-download.png'),
+      imageDesktop: require('../images/projects/desktop/google-drive-download.png'),
       title: 'Google Drive Download',
       description: 'This app takes a Google Drive link and generates a direct download link, as well as offers audio and video/document embedding functionalities.',
       codeSource: 'https://github.com/audiimer/google-direct-download-link-generator',
@@ -44,10 +50,6 @@ const CarouselComponent = () => {
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
-
-  // const updateActiveItem = (index) => {
-  //   setCurrentIndex(index);
-  // };
 
   const handlePrevClick = () => {
     setCurrentIndex((prevIndex) => {
@@ -68,7 +70,6 @@ const CarouselComponent = () => {
   };
 
   return (
-
     <div className={styles.carousel} id='projects'>
       <div className={styles.carouselInner}>
         {carouselItems.map((item, index) => (
@@ -76,7 +77,11 @@ const CarouselComponent = () => {
             key={index}
             className={`${styles.carouselItem} ${index === currentIndex ? styles.active : ''}`}
           >
-            <img src={item.image} className={styles.carouselImage} alt="..." />
+            <img
+              src={window.innerWidth >= 768 ? item.imageDesktop : item.imageMobile}
+              className={styles.carouselImage}
+              alt="..."
+            />
             <div className={styles.carouselCaption}>
               <h5>{item.title}</h5>
               <p>{item.description}</p>
@@ -96,7 +101,6 @@ const CarouselComponent = () => {
         className={styles.carouselControlPrev}
         type="button"
         onClick={handlePrevClick}
-
       >
         <i><FontAwesomeIcon icon={faArrowLeft}></FontAwesomeIcon></i>
       </button>
@@ -108,7 +112,6 @@ const CarouselComponent = () => {
         <i><FontAwesomeIcon icon={faArrowRight}></FontAwesomeIcon></i>
       </button>
     </div>
-
   );
 };
 

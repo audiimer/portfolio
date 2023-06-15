@@ -156,19 +156,171 @@ h5 {
     line-height: 1.2rem;
 }
 
-/*  RESPONSIVENESS In Progress */
-@media (max-width: 767.98px) {
+
+/* ------------------------------------------------------- MEDIA QUERY --------------------------------------------------------------- */
+
+
+
+/* -----------------------------------------------EXTRA SMALL DEVICES(PHONES)--------------------------------------------------------- */
+@media only screen and (max-width: 575px) {
+
+    .timeline::after {
+        left: 250px;
+    }
+
+    .container {
+        width: 80%;
+        padding-left: 120px;
+        padding-right: 0px;
+        margin-top: 150px;
+        z-index: 1;
+    }
+
+    .container.right {
+        left: -15%;
+    }
+    .container.left {
+        left: -15%;
+    }
+
+    .container.left::after,
+    .container.right::after {
+        top:0px;
+        left: 309px;
+    }
+
+    .container.left::before,
+    .container.right::before {
+        display: none;
+    }
+
+
+    .container.left .icon,
+    .container.right .icon {
+        right: auto;
+        left: 296px;
+        top: -164px
+    }
+
+    .container.left .content,
+    .container.right .content {
+        padding: 50px 30px 30px 30px;
+        border-radius: 20px;
+    }
+    .container .date {
+        position: absolute;
+        background-color: #fff;
+        border: solid 3px var(--container-color);
+        border-radius: 20px;
+        padding: 10px 20px 10px 20px;
+    }
+
+
+    .container.left .date,
+    .container.right .date  {
+        color: var(--container-color);
+        top:-90px;
+        left: 235px;
+        right: auto;
+    }
+
+
+    .container.education .date {
+         top:-90px;
+        left: 272px;
+    }
+  }
+
+/* -----------------------------------------------SMALL DEVICES(TABLETS)--------------------------------------------------------- */
+  @media only screen and (min-width: 576px) and (max-width: 767px) {
+
+    .timeline::after {
+        left: 75px;
+    }
+
+    .container {
+        width: 80%;
+        padding-left: 120px;
+        padding-right: 30px;
+        margin-top: 150px;
+    }
+
+    .container.right {
+        left: -3%;
+    }
+    .container.left {
+        left: -3%;
+    }
+
+    .container.left::after,
+    .container.right::after {
+        left: 82px;
+    }
+
+    .container.left::before,
+    .container.right::before {
+        left: 100px;
+        border-color: transparent var(--primary-color) transparent transparent;
+    }
+
+    .container.left .date,
+    .container.right .date {
+        right: auto;
+        left: 15px;
+    }
+
+    .container.left .icon,
+    .container.right .icon {
+        right: auto;
+        left: 146px;
+    }
+
+    .container.left .content,
+    .container.right .content {
+        padding: 50px 30px 30px 120px;
+        border-radius: 20px;
+    }
+    .container .date {
+        position: absolute;
+        background-color: #fff;
+        border: solid 3px var(--container-color);
+        border-radius: 20px;
+        padding: 10px 20px 10px 20px;
+    }
+
+
+    .container.left .date,
+     .container.right .date  {
+        color: var(--container-color);
+        top:-40px;
+        left: 10px;
+    }
+
+
+    .container.education .date {
+         top:-40px;
+        left: 45px;
+    }
+
+  }
+
+/* -----------------------------------------------MEDIUM DEVICES(LAPTOPS, DESKTOPS)--------------------------------------------------------- */
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
     .timeline::after {
         left: 90px;
     }
 
     .container {
-        width: 100%;
+        width: 80%;
         padding-left: 120px;
         padding-right: 30px;
+        margin-top: 150px;
     }
 
     .container.right {
+        left: 0%;
+    }
+    .container.left {
         left: 0%;
     }
 
@@ -197,7 +349,117 @@ h5 {
 
     .container.left .content,
     .container.right .content {
-        padding: 30px 30px 30px 90px;
+        padding: 50px 30px 30px 120px;
         border-radius: 500px 0 0 500px;
     }
+    .container .date {
+        position: absolute;
+        background-color: #fff;
+        border: solid 3px var(--container-color);
+        border-radius: 20px;
+        padding: 10px 20px 10px 20px;
+    }
+
+
+    .container.left .date,
+     .container.right .date  {
+        color: var(--container-color);
+        top:-40px;
+        left: 10px;
+    }
+
+
+    .container.education .date {
+         top:-40px;
+        left: 45px;
+    }
+
+
 }
+
+/* -----------------------------------------------LARGE DEVICES(LAPTOPS, DESKTOPS)--------------------------------------------------------- */
+  @media only screen and (min-width: 992px) and (max-width: 1199px) {
+    .timeline {
+        position: relative;
+        width: 100%;
+        max-width: 900px;
+        margin: 100px 0 auto;
+
+        padding: 15px 37px;
+    }
+
+
+
+    .container {
+        padding: 15px 20px;
+        position: relative;
+        background: inherit;
+        width: 50%;
+
+    }
+
+    .container.left {
+        left: -40px;
+    }
+
+    .container.right {
+        left: 445px;
+    }
+
+
+
+    .container.left::after {
+        left: 98%;
+    }
+    .container.right::after {
+        left: -5px;
+    }
+
+    .container::before {
+        content: '';
+        position: absolute;
+        width: 50px;
+        height: 2px;
+        top: calc(50% - 1px);
+        right: 8px;
+        background: var(--container-color);
+        z-index: 1;
+    }
+    .container.left .icon {
+        right: 20px;
+    }
+
+    .container.right .icon {
+        left: 20px;
+    }
+
+
+    .container .content {
+        padding: 30px 50px 30px 30px;
+        background: var(--container-color);
+        position: relative;
+        border-radius: 50px;
+    }
+
+    .container.right .content {
+        padding: 50px 20px 30px 50px;
+        border-radius: 50px;
+    }
+
+    .container .content h2,
+    h5 {
+        font-size: 16px;
+    }
+
+
+    .container .content p {
+        padding-bottom: 15px;
+        font-size: 14px;
+    }
+
+}
+
+/* -----------------------------------------------EXTRA LARGE DEVICES(LARGE LAPTOPS, LARGE SCREENS)--------------------------------------------------------- */
+  @media only screen and (min-width: 1200px) {
+    /* Styles for extra large devices */
+  }
