@@ -164,23 +164,21 @@ h5 {
 /* -----------------------------------------------EXTRA SMALL DEVICES(PHONES)--------------------------------------------------------- */
 @media only screen and (max-width: 575px) {
 
-    .timeline::after {
-        left: 250px;
-    }
+
 
     .container {
-        width: 80%;
-        padding-left: 120px;
-        padding-right: 0px;
-        margin-top: 150px;
+        width: 100%;
+        max-width: 800px;
+        position: relative;
+        right: 200px;
+        left: 50%;
+        transform: translateX(-50%);
+        margin-top: 200px;
         z-index: 1;
-    }
+      }
 
-    .container.right {
-        left: -15%;
-    }
     .container.left {
-        left: -15%;
+        left: 50%;
     }
 
     .container.left::after,
@@ -220,14 +218,14 @@ h5 {
     .container.right .date  {
         color: var(--container-color);
         top:-90px;
-        left: 235px;
+        left: 156px;
         right: auto;
     }
 
 
     .container.education .date {
          top:-90px;
-        left: 272px;
+        left: 194px;
     }
   }
 
@@ -379,85 +377,77 @@ h5 {
 
 /* -----------------------------------------------LARGE DEVICES(LAPTOPS, DESKTOPS)--------------------------------------------------------- */
   @media only screen and (min-width: 992px) and (max-width: 1199px) {
-    .timeline {
-        position: relative;
-        width: 100%;
-        max-width: 900px;
-        margin: 100px 0 auto;
-
-        padding: 15px 37px;
+    .timeline::after {
+        left: 90px;
     }
-
-
 
     .container {
-        padding: 15px 20px;
-        position: relative;
-        background: inherit;
-        width: 50%;
-
-    }
-
-    .container.left {
-        left: -40px;
+        width: 80%;
+        padding-left: 120px;
+        padding-right: 30px;
+        margin-top: 150px;
     }
 
     .container.right {
-        left: 445px;
+        left: 0%;
+    }
+    .container.left {
+        left: 0%;
     }
 
-
-
-    .container.left::after {
-        left: 98%;
-    }
+    .container.left::after,
     .container.right::after {
-        left: -5px;
+        left: 82px;
     }
 
-    .container::before {
-        content: '';
-        position: absolute;
-        width: 50px;
-        height: 2px;
-        top: calc(50% - 1px);
-        right: 8px;
-        background: var(--container-color);
-        z-index: 1;
-    }
-    .container.left .icon {
-        right: 20px;
+    .container.left::before,
+    .container.right::before {
+        left: 100px;
+        border-color: transparent var(--primary-color) transparent transparent;
     }
 
+    .container.left .date,
+    .container.right .date {
+        right: auto;
+        left: 15px;
+    }
+
+    .container.left .icon,
     .container.right .icon {
-        left: 20px;
+        right: auto;
+        left: 146px;
     }
 
-
-    .container .content {
-        padding: 30px 50px 30px 30px;
-        background: var(--container-color);
-        position: relative;
-        border-radius: 50px;
-    }
-
+    .container.left .content,
     .container.right .content {
-        padding: 50px 20px 30px 50px;
-        border-radius: 50px;
+        padding: 50px 30px 30px 120px;
+        border-radius: 500px 0 0 500px;
+    }
+    .container .date {
+        position: absolute;
+        background-color: #fff;
+        border: solid 3px var(--container-color);
+        border-radius: 20px;
+        padding: 10px 20px 10px 20px;
     }
 
-    .container .content h2,
-    h5 {
-        font-size: 16px;
+
+    .container.left .date,
+     .container.right .date  {
+        color: var(--container-color);
+        top:-40px;
+        left: 10px;
     }
 
 
-    .container .content p {
-        padding-bottom: 15px;
-        font-size: 14px;
+    .container.education .date {
+         top:-40px;
+        left: 45px;
     }
+
 
 }
+
 
 /* -----------------------------------------------EXTRA LARGE DEVICES(LARGE LAPTOPS, LARGE SCREENS)--------------------------------------------------------- */
   @media only screen and (min-width: 1200px) {

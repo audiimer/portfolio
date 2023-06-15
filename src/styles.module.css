@@ -15,7 +15,7 @@ body {
   font-family: 'Raleway', sans-serif;
   color: var(--primary-color);
   letter-spacing: 0.09em;
-
+  font-size: 12px;
 }
 
 strong {
@@ -193,8 +193,8 @@ strong {
 
 
 .intro {
-  margin: 200px;
-  margin-bottom: 300px;
+  margin: 200px 200px 300px 200px;
+  padding:10px;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -206,7 +206,7 @@ strong {
     linear-gradient(to top, black 8px, transparent 4px) 100% 100%;
 
   background-repeat: no-repeat;
-  background-size: 20px 20px;
+  background-size: 50px 80px;
 }
 
 .intro p {
@@ -240,6 +240,7 @@ strong {
 
 
 .introTitle a {
+  font-size: 1.5em;
   color: #ffffff;
   text-decoration: none;
   letter-spacing: 0.15em;
@@ -251,7 +252,7 @@ strong {
 .introTitle a::after {
   content: "";
   position: absolute;
-  bottom: 0;
+  bottom: 10px;
   left: 50%;
   display: block;
   background: none repeat scroll 0 0 transparent;
@@ -287,11 +288,6 @@ strong {
   box-shadow: 3px 15px 8px -10px rgba(0, 0, 0, 0.3);
   transition: all 0.13s ease-in;
 
-}
-
-.container.transitioneffect:hover {
-  transform: translateY(-10px) rotate(1deg);
-  box-shadow: 3px 15px 8px -10px rgba(0, 0, 0, 0.3);
 }
 
 .aboutsection1 {
@@ -459,7 +455,7 @@ strong {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    margin: 10px;
+    margin: 20px;
   }
 
   .timelinebtn {
@@ -521,7 +517,7 @@ strong {
   .intro {
     display: flex;
     flex-direction: column;
-    margin: 100px 40px 300px 40px;
+    margin: 100px 20px 300px 20px;
     padding: 0 30px 0 30px;
     text-align: center;
   }
@@ -531,7 +527,7 @@ strong {
   }
 
   .intro h1 {
-    font-size: 2.0rem;
+    font-size: 1.4rem;
   }
 
   .imgcontainer {
@@ -543,11 +539,13 @@ strong {
     border-radius: 50%;
 
   }
-
+  .btn {
+   font-size: 1em;
+  }
   /* ABOUT CSS */
 
   .container {
-    width: 70%;
+    width: 60%;
     display: block;
 
   }
@@ -557,9 +555,8 @@ strong {
   }
 
   .aboutsection2 {
-    /* text-align: center; */
     margin: 20px -30px;
-    font-size: 20px;
+    font-size: 12px;
   }
 
   .btnContainer {
@@ -575,7 +572,9 @@ strong {
 
 
   /* CAROUSEL CSS */
-
+.carousel{
+  width: 90%;
+}
 
   .carouselImage {
     width: 100%;
@@ -618,13 +617,7 @@ strong {
 
   }
 
-  .carouselControlPrev {
-    left: -45px;
-  }
 
-  .carouselControlNext {
-    right: -45px;
-  }
 }
 
 /* -----------------------------------------------SMALL DEVICES(TABLETS)--------------------------------------------------------- */
