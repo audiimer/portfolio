@@ -567,8 +567,7 @@ strong {
   /* ABOUT CSS */
 
   .container {
-    border-radius: 10px;
-    width: 68%;
+    width: 71%;
     display: block;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
@@ -576,8 +575,12 @@ strong {
     border-bottom-right-radius: 0;
 
     background-color: var(--container-color);
-    border: solid 3px var(--header-color);
-    padding: 30px 50px 50px 50px;
+
+    border-top: 10px solid rgba(8, 8, 8, 0.1);
+    border-right:none;
+    border-bottom:none;
+    border-left:none;
+    padding: 30px 60px 50px 60px;
   }
 
 
