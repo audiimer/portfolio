@@ -486,7 +486,16 @@ strong {
       overflow: hidden;
     }
   }
-
+  @keyframes navbarCollapsed {
+    from {
+      max-height: 500px;
+      overflow: hidden;
+    }
+    to {
+      max-height: 0;
+      overflow: hidden;
+    }
+  }
 
 
   .hamburger {
@@ -513,6 +522,10 @@ strong {
 
   .navigationMenu.expanded ul {
     animation: navbarExpanded .5s ease-in-out forwards;
+    display: block;
+  }
+  .navigationMenu.collapsed ul {
+    animation: navbarCollapsed .5s ease-in-out forwards;
     display: block;
   }
 
@@ -624,8 +637,9 @@ strong {
 
    /* CAROUSEL CSS */
    .carousel {
-    width: 95%;
+    width: 100%;
     text-align: center;
+    border: none;
   }
 
   .carouselImage {
