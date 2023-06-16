@@ -11,7 +11,7 @@
 /* -------------------------------------------------------GENERAL CSS--------------------------------------------------------------- */
 body {
   margin: 0 auto;
-  background: linear-gradient(80deg, var(--background-color)30%, var(--secondary-color)90%);
+  background: linear-gradient(110deg, var(--background-color)40%, var(--secondary-color)100%);
   font-family: 'Raleway', sans-serif;
   color: var(--primary-color);
   letter-spacing: 0.09em;
@@ -33,7 +33,6 @@ strong {
   cursor: pointer;
   border-radius: 30px;
   border: none;
-  box-shadow: 0 0 0 transparent;
   transition: box-shadow 0.5s ease;
   text-decoration: none;
   text-align: center;
@@ -90,6 +89,7 @@ strong {
   align-items: center;
   position: relative;
   padding: 0.5rem 0rem;
+  z-index: 1;
 }
 
 .navbar ul {
@@ -103,14 +103,19 @@ strong {
 }
 
 .navbar ul li a {
+  padding: 40px 0 20px 0;
   display: block;
+  margin-left: 50px;
+
   width: 100%;
   font-size: 1rem;
   text-decoration: none;
+  text-align: center;
   color: #fff;
   font-weight: bold;
   border-radius: 4px;
   transition: background-color 0.3s ease;
+
 }
 
 .navbar ul li a:hover {
@@ -210,7 +215,6 @@ strong {
 
 .intro p {
   font-size: 1.5rem;
-  color: var(--primary-color);
 }
 
 .intro h1 {
@@ -303,7 +307,7 @@ strong {
 }
 
 .aboutsection2 {
-  font-size: .9rem;
+  font-size: 1rem;
   margin-top: 110px;
 }
 
@@ -539,7 +543,6 @@ strong {
   }
   .aboutsection2 p {
     letter-spacing: 0.01em;
-    text-align: justify;
     font-size: .8rem;
     margin: 0 -10px;
   }
@@ -685,6 +688,7 @@ strong {
 /* -----------------------------------------------SMALL DEVICES(TABLETS)--------------------------------------------------------- */
 @media only screen and (min-width: 576px) and (max-width: 767px) {
 
+
   .hamburger {
     display: block;
   }
@@ -693,7 +697,7 @@ strong {
     display: none;
     position: absolute;
     top: 80px;
-    right: -30px;
+    right: -20px;
     width: 120%;
     background-color: rgba(0, 0, 0, 0.9);
   }
@@ -703,6 +707,7 @@ strong {
   }
 
   .navigationMenu li a {
+    width: 80%;
     padding: 1.5rem;
   }
 
@@ -799,13 +804,15 @@ strong {
 
   /* Styles for medium devices */
   .intro {
-    margin: 100px 60px 300px 60px;
-    padding: 0 20px 0 20px;
+    margin: 100px 10px 300px 10px;
+    padding: 0 30px 0 30px;
   }
 
-  .intro p {
-    font-size: 1.1rem;
+
+  .imgcontainer img {
+    width: 270px;
   }
+
 
   /* ABOUT CSS */
   .container {
@@ -820,12 +827,11 @@ strong {
   }
 
   .aboutsection2 {
-    font-size: .9rem;
     margin-top: 60px;
   }
 
   .carousel {
-    width: 95%;
+    width: 97%;
   }
 
 }
@@ -834,12 +840,13 @@ strong {
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
 
   .intro {
-    margin: 100px 60px 300px 60px;
+    margin: 100px 20px 300px 20px;
     padding: 0 20px 0 20px;
   }
 
-  .intro p {
-    font-size: 1.1rem;
+
+  .introTitle{
+    font-size: .6rem;
   }
 
   /* ABOUT CSS */
@@ -855,7 +862,6 @@ strong {
   }
 
   .aboutsection2 {
-    font-size: .9rem;
     margin-top: 60px;
   }
 
