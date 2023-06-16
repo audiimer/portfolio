@@ -50,22 +50,21 @@ const CarouselComponent = () => {
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentCodeSource, setCurrentCodeSource] = useState(carouselItems[0].codeSource);
 
   const handlePrevClick = () => {
     setCurrentIndex((prevIndex) => {
-      if (prevIndex === 0) {
-        return carouselItems.length - 1;
-      }
-      return prevIndex - 1;
+      const newIndex = prevIndex === 0 ? carouselItems.length - 1 : prevIndex - 1;
+      setCurrentCodeSource(carouselItems[newIndex].codeSource);
+      return newIndex;
     });
   };
 
   const handleNextClick = () => {
     setCurrentIndex((prevIndex) => {
-      if (prevIndex === carouselItems.length - 1) {
-        return 0;
-      }
-      return prevIndex + 1;
+      const newIndex = prevIndex === carouselItems.length - 1 ? 0 : prevIndex + 1;
+      setCurrentCodeSource(carouselItems[newIndex].codeSource);
+      return newIndex;
     });
   };
 
@@ -86,10 +85,10 @@ const CarouselComponent = () => {
               <h5>{item.title}</h5>
               <p>{item.description}</p>
               <a
-                href={item.codeSource}
+                href={currentCodeSource}
                 className={styles.btn}
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="noreferrer"
               >
                 Code Source
               </a>
@@ -102,15 +101,16 @@ const CarouselComponent = () => {
         type="button"
         onClick={handlePrevClick}
       >
-        <i><FontAwesomeIcon icon={faArrowLeft}></FontAwesomeIcon></i>
+        <i><FontAwesomeIcon icon={faArrowLeft} /></i>
       </button>
       <button
         className={styles.carouselControlNext}
         type="button"
         onClick={handleNextClick}
       >
-        <i><FontAwesomeIcon icon={faArrowRight}></FontAwesomeIcon></i>
+        <i><FontAwesomeIcon icon={faArrowRight} /></i>
       </button>
+
     </div>
   );
 };

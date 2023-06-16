@@ -119,7 +119,7 @@ strong {
 }
 
 /* NAVBAR COLLAPSE ANIMATION */
-@keyframes navbarExpanded {
+/* @keyframes navbarExpanded {
   from {
     max-height: 0;
     overflow: hidden;
@@ -127,7 +127,6 @@ strong {
   to {
     max-height: 500px;
     overflow: hidden;
-
   }
 }
 
@@ -140,7 +139,7 @@ strong {
     max-height: 0;
     overflow: hidden;
   }
-}
+} */
 
 /* -------------------------------------------------------LOGO CSS--------------------------------------------------------------- */
 
@@ -475,30 +474,46 @@ strong {
 
 /* -----------------------------------------------EXTRA SMALL DEVICES(PHONES)--------------------------------------------------------- */
 @media only screen and (max-width: 575px) {
+  @keyframes navbarExpanded {
+    from {
+      max-height: 0;
+      overflow: hidden;
+    }
+    to {
+      max-height: 500px;
+      overflow: hidden;
+    }
+  }
+
+
 
   .hamburger {
     display: block;
   }
-  .navigationMenu li a {
-    padding: 1.5rem;
-  }
+
   .navbar ul {
+    display: none;
     position: absolute;
-    right: 0;
     top: 80px;
+    right: 0px;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.9);
   }
+
+  .navbar ul li {
+    text-align: center;
+  }
+
+  .navigationMenu li a {
+    padding: 1.5rem;
+  }
+
 
   .navigationMenu.expanded ul {
     animation: navbarExpanded .5s ease-in-out forwards;
     display: block;
   }
 
-  .navigationMenu.collapsed ul {
-    animation: navbarCollapse .5s ease-in-out forwards;
-    display: block;
-  }
 
 
 

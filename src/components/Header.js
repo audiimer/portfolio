@@ -38,7 +38,7 @@ function Header({ setActiveComponent, setActiveButton }) {
           />
         </svg></button>
         <div className={
-          isNavExpanded ? `${styles.navigationMenu} ${styles.expanded}` : `${styles.navigationMenu} ${styles.collapsed}`}
+          isNavExpanded ? `${styles.navigationMenu} ${styles.expanded}` : ``}
         >
         <ul>
           <li>
