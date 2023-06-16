@@ -85,6 +85,7 @@ strong {
 .navbar {
   width: 100%;
   display: flex;
+  justify-content:space-between;
   align-items: center;
   position: relative;
   padding: 0.5rem 0rem;
@@ -95,6 +96,7 @@ strong {
   padding: 0;
   list-style: none;
   display: flex;
+
 }
 
 .navbar ul li {
