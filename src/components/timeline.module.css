@@ -17,6 +17,7 @@
     padding: 15px 0;
 }
 
+
 .timeline::after {
     content: '';
     position: absolute;
@@ -80,7 +81,7 @@
     display: inline-block;
     top: calc(50% - 10px);
     text-align: center;
-    font-size: 20px;
+    font-size: 1rem;
     font-weight: bold;
     color: var(--container-color);
     text-transform: uppercase;
@@ -128,6 +129,7 @@
     left: 56px;
 }
 
+
 .container .content {
     padding: 30px 90px 30px 30px;
     background: var(--container-color);
@@ -164,34 +166,33 @@ h5 {
 /* -----------------------------------------------EXTRA SMALL DEVICES(PHONES)--------------------------------------------------------- */
 @media only screen and (max-width: 575px) {
 
-
-
-    /* .container {
-        width: 100%;
-        max-width: 800px;
-        transform: translateX(-50%);
-        margin-top: 200px;
-        z-index: 1;
-    } */
+    .timeline .container .content p, .timeline .container .content h2, .timeline .container .content h4,.timeline .container .content h5{
+    font-size:.9rem;
+    }
+    .timeline .container .content h2{
+        text-align: center;
+    }
 
     .container.left {
         left: 50%;
     }
+
     .container.left::after,
     .container.right::after {
-      transform: translateX(-50%);
-      top: 0;
-      left: 50%;
-      right: 0;
+        transform: translateX(-50%);
+        top: 0;
+        left: 50%;
+        right: 0;
     }
 
     .container {
-      width: 100%;
-      max-width: 800px;
-      transform: translateX(-50%);
-      margin-top: 200px;
-      z-index: 1;
+        width: 93%;
+        max-width: 800px;
+        transform: translateX(-50%);
+        margin-top: 200px;
+        z-index: 1;
     }
+
     .container.left::before,
     .container.right::before {
         display: none;
@@ -199,12 +200,12 @@ h5 {
 
 
     .container.left .icon,
-.container.right .icon {
-  right: auto;
-  left: 50%;
-  top: -164px;
-  transform: translateX(-50%);
-}
+    .container.right .icon {
+        right: auto;
+        left: 50%;
+        top: -164px;
+        transform: translateX(-50%);
+    }
 
     .container.left .content,
     .container.right .content {
@@ -223,18 +224,18 @@ h5 {
 
     .container.left .date,
     .container.right .date {
-      color: var(--container-color);
-      top: -90px;
-      left: 50%;
-      right: auto;
-      transform: translateX(-50%);
+        color: var(--container-color);
+        top: -90px;
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%);
     }
 
     .container.education .date {
         top: -90px;
         left: 50%;
         transform: translateX(-50%);
-      }
+    }
 }
 
 /* -----------------------------------------------SMALL DEVICES(TABLETS)--------------------------------------------------------- */
@@ -389,9 +390,6 @@ h5 {
 
 /* -----------------------------------------------LARGE DEVICES(LAPTOPS, DESKTOPS)--------------------------------------------------------- */
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
-    .timeline {
-        /* background-color: red; */
-    }
 
     .timeline::after {
         left: 90px;
