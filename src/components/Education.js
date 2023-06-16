@@ -72,7 +72,7 @@ function Education() {
                     <div className={timeline.content}>
                         <h2>BACHELOR’S DEGREE IN BUSINESS ADMINISTRATION / HUMAN RESOURCE MANAGEMENT</h2>
                         <p>Cumulative GPA: 3.5/4.0</p>
-                        <h5>Recruitment and Selection</h5>
+                        <h5>Skills Learned:</h5>
                         <hr></hr>
 
                         <p>Ethics and Professionalism</p>

@@ -60,7 +60,6 @@ strong {
 
 /* -------------------------------------------------------NAVBAR--------------------------------------------------------------- */
 .hamburger {
-  border: solid 2px rgb(15, 7, 7);
   height: 40px;
   width: 40px;
   padding: 0.5rem;
@@ -103,11 +102,7 @@ strong {
 }
 
 .navbar ul li a {
-  padding: 40px 0 20px 0;
   display: block;
-  margin-left: 80px;
-
-  width: 85%;
   font-size: 1rem;
   text-decoration: none;
   text-align: center;
@@ -227,7 +222,7 @@ strong {
 }
 
 .imgcontainer img {
-  width: 400px;
+  width: 350px;
   border-radius: 50%;
 }
 
@@ -455,33 +450,18 @@ strong {
 
 
 /* -----------------------------------------------EXTRA SMALL DEVICES(PHONES)--------------------------------------------------------- */
-@media only screen and (max-width: 575px) {
-
-  body {
-    background: linear-gradient(95deg, var(--background-color)30%, var(--secondary-color)80%);
-
-  }
+@media only screen and (max-width: 574px) {
 
   .hamburger {
     display: block;
   }
 
   .navbar ul {
-    display: none;
     position: absolute;
     top: 80px;
-    right: -30px;
-    width: 120%;
     background-color: rgba(0, 0, 0, 0.9);
   }
 
-  .navbar ul li {
-    text-align: center;
-  }
-
-  .navigationMenu li a {
-    padding: 1.5rem;
-  }
 
   .navigationMenu.expanded ul {
     display: block;
@@ -491,12 +471,6 @@ strong {
 
 
   .intro {
-    margin: 200px 0px 500px 0px;
-    padding: 10px;
-    display: flex;
-    justify-content: space-around;
-    /* align-items: center; */
-
     background-size: 50px 30px;
   }
 
@@ -523,9 +497,20 @@ strong {
   /* ABOUT CSS */
 
   .container {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+
     background-color: var(--container-color);
     border: solid 3px var(--header-color);
-    padding: 0 30px 50px 30px;
+    padding: 0 50px 50px 50px;
+  }
+
+  .container a {
+    font-size: .9rem;
+    margin: 10px -10px;
+    padding: 10px 20px;
   }
 
   .aboutsection1 {
@@ -533,24 +518,22 @@ strong {
   }
 
   .aboutsection1 img {
-    width: 225px;
+    width: 220px;
+    height: 220px;
   }
 
   .aboutsection2 h1 {
     text-align: center;
-    font-size: 1.1rem;
-    padding-bottom: 30px;
+    font-size: 1.4rem;
+    padding-bottom: 40px;
+    margin: 0 -60px;
   }
+
   .aboutsection2 p {
-    letter-spacing: 0.01em;
-    font-size: .8rem;
-    margin: 0 -10px;
+    text-align: justify; /*It really is a love/hate situation with you*/
+    margin: 0 -30px;
+    padding-bottom: 20px;
   }
-
-  .aboutsection2 a {
-    font-size: .9rem;
-  }
-
 
   .timeline {
     display: flex;
@@ -571,35 +554,22 @@ strong {
   .timelinebtn:nth-child(3) {
     flex-basis: calc(50% - 20px);
   }
+
 }
 
 /* -----------------------------------------------SMALL DEVICES(TABLETS)--------------------------------------------------------- */
 @media (max-width: 575px) {
-  .hamburger {
-    display: block;
-  }
 
   .navbar ul {
-
     display: none;
-    position: absolute;
-    top: 80px;
-    right: -20px;
-    width: 130%;
-    background-color: rgba(0, 0, 0, 0.9);
-  }
-
-  .navbar ul li {
-    text-align: center;
+    right: 0;
+    width: 100%;
   }
 
   .navigationMenu li a {
     padding: 1.5rem;
   }
 
-  .navigationMenu.expanded ul {
-    display: block;
-  }
 
   /* LOGO */
 
@@ -622,7 +592,8 @@ strong {
   /* ABOUT CSS */
 
   .container {
-    width: 80%;
+    border-radius: 10px;
+    width: 68%;
     display: block;
     padding-top: 30px;
 
@@ -632,8 +603,9 @@ strong {
     height: auto;
   }
 
+
   .aboutsection2 {
-    font-size: .9rem;
+    font-size: 1rem;
     margin-top: 60px;
   }
 
@@ -688,7 +660,6 @@ strong {
 /* -----------------------------------------------SMALL DEVICES(TABLETS)--------------------------------------------------------- */
 @media only screen and (min-width: 576px) and (max-width: 767px) {
 
-
   .hamburger {
     display: block;
   }
@@ -697,8 +668,8 @@ strong {
     display: none;
     position: absolute;
     top: 80px;
-    right: -20px;
-    width: 120%;
+    right: 0px;
+    width: 100%;
     background-color: rgba(0, 0, 0, 0.9);
   }
 
@@ -707,9 +678,9 @@ strong {
   }
 
   .navigationMenu li a {
-    width: 80%;
     padding: 1.5rem;
   }
+
 
   .navigationMenu.expanded ul {
     display: block;
@@ -845,7 +816,7 @@ strong {
   }
 
 
-  .introTitle{
+  .introTitle {
     font-size: .6rem;
   }
 
