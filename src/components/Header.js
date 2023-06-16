@@ -2,7 +2,9 @@ import React,{ useState }  from 'react';
 import styles from '../styles.module.css';
 import Logo from './Logo';
 
-function Header({ setActiveComponent, activeButton, setActiveButton }) {
+function Header({ setActiveComponent, setActiveButton }) {
+
+
   const [isNavExpanded, setIsNavExpanded] = useState(false)
   const handleLinkClick = (event, component) => {
     event.preventDefault();
@@ -36,7 +38,7 @@ function Header({ setActiveComponent, activeButton, setActiveButton }) {
           />
         </svg></button>
         <div className={
-          isNavExpanded ? `${styles.navigationMenu} ${styles.expanded}` : styles.navigationMenu}
+          isNavExpanded ? `${styles.navigationMenu} ${styles.expanded}` : `${styles.navigationMenu} ${styles.collapsed}`}
         >
         <ul>
           <li>

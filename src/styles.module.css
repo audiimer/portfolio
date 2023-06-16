@@ -106,7 +106,7 @@ strong {
   font-size: 1rem;
   text-decoration: none;
   text-align: center;
-  color: #fff;
+  color: #ffffff;
   font-weight: bold;
   border-radius: 4px;
   transition: background-color 0.3s ease;
@@ -116,6 +116,30 @@ strong {
 .navbar ul li a:hover {
   background-color: #333;
   color: var(--secondary-color);
+}
+
+/* NAVBAR COLLAPSE ANIMATION */
+@keyframes navbarExpanded {
+  from {
+    max-height: 0;
+    overflow: hidden;
+  }
+  to {
+    max-height: 500px;
+    overflow: hidden;
+
+  }
+}
+
+@keyframes navbarCollapse {
+  from {
+    max-height: 500px;
+    overflow: hidden;
+  }
+  to {
+    max-height: 0;
+    overflow: hidden;
+  }
 }
 
 /* -------------------------------------------------------LOGO CSS--------------------------------------------------------------- */
@@ -450,29 +474,45 @@ strong {
 
 
 /* -----------------------------------------------EXTRA SMALL DEVICES(PHONES)--------------------------------------------------------- */
-@media only screen and (max-width: 574px) {
+@media only screen and (max-width: 575px) {
 
   .hamburger {
     display: block;
   }
-
+  .navigationMenu li a {
+    padding: 1.5rem;
+  }
   .navbar ul {
     position: absolute;
+    right: 0;
     top: 80px;
+    width: 100%;
     background-color: rgba(0, 0, 0, 0.9);
   }
 
-
   .navigationMenu.expanded ul {
+    animation: navbarExpanded .5s ease-in-out forwards;
     display: block;
   }
 
+  .navigationMenu.collapsed ul {
+    animation: navbarCollapse .5s ease-in-out forwards;
+    display: block;
+  }
+
+
+
   /* LOGO */
 
-
   .intro {
+    display: flex;
+    flex-direction: column;
+    margin: 100px 40px 300px 40px;
+    padding: 30px 0;
+    text-align: center;
     background-size: 50px 30px;
   }
+
 
   .intro p {
     font-size: 1.2rem;
@@ -497,6 +537,9 @@ strong {
   /* ABOUT CSS */
 
   .container {
+    border-radius: 10px;
+    width: 68%;
+    display: block;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
     border-bottom-left-radius: 0;
@@ -504,8 +547,9 @@ strong {
 
     background-color: var(--container-color);
     border: solid 3px var(--header-color);
-    padding: 0 50px 50px 50px;
+    padding: 30px 50px 50px 50px;
   }
+
 
   .container a {
     font-size: .9rem;
@@ -516,6 +560,12 @@ strong {
   .aboutsection1 {
     height: auto;
   }
+
+  .aboutsection2 {
+    font-size: 1rem;
+    margin-top: 60px;
+  }
+
 
   .aboutsection1 img {
     width: 220px;
@@ -555,87 +605,8 @@ strong {
     flex-basis: calc(50% - 20px);
   }
 
-}
-
-/* -----------------------------------------------SMALL DEVICES(TABLETS)--------------------------------------------------------- */
-@media (max-width: 575px) {
-
-  .navbar ul {
-    display: none;
-    right: 0;
-    width: 100%;
-  }
-
-  .navigationMenu li a {
-    padding: 1.5rem;
-  }
-
-
-  /* LOGO */
-
-  .intro {
-    display: flex;
-    flex-direction: column;
-    margin: 100px 40px 300px 40px;
-    padding: 30px 0;
-    text-align: center;
-  }
-
-  .imgcontainer {
-    order: -1;
-  }
-
-  .imgcontainer img {
-    width: 200px;
-  }
-
-  /* ABOUT CSS */
-
-  .container {
-    border-radius: 10px;
-    width: 68%;
-    display: block;
-    padding-top: 30px;
-
-  }
-
-  .aboutsection1 {
-    height: auto;
-  }
-
-
-  .aboutsection2 {
-    font-size: 1rem;
-    margin-top: 60px;
-  }
-
-
-  .timeline {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 10px;
-  }
-
-  .timelinebtn {
-    margin: 10px;
-  }
-
-  .timelinebtn:nth-child(1),
-  .timelinebtn:nth-child(4) {
-    width: 100%;
-  }
-
-  .timelinebtn:nth-child(2),
-  .timelinebtn:nth-child(3) {
-    flex-basis: calc(50% - 20px);
-  }
-
-  .timelinebtn p {
-    width: 100%;
-  }
-
-  /* CAROUSEL CSS */
-  .carousel {
+   /* CAROUSEL CSS */
+   .carousel {
     width: 95%;
     text-align: center;
   }
@@ -656,6 +627,7 @@ strong {
   }
 
 }
+
 
 /* -----------------------------------------------SMALL DEVICES(TABLETS)--------------------------------------------------------- */
 @media only screen and (min-width: 576px) and (max-width: 767px) {
