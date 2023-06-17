@@ -24,7 +24,7 @@ function App() {
       setTimeout(() => {
         setActiveComponent(component);
         setIsFadingOut(false);
-      }, 300);
+      }, 200);
     }
   };
 

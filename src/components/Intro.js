@@ -15,7 +15,7 @@ function Intro() {
     });
     return (
         <div>
-            <div className={styles.intro}>
+            <div className={styles.intro} id="intro">
                 <section>
                     <p>Hello!</p>
                     <h1>
