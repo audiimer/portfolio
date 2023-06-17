@@ -89,7 +89,7 @@ strong {
   align-items: center;
   position: relative;
   padding: 0.5rem 0rem;
-  z-index: 1;
+  z-index: 0;
 }
 
 .navbar ul {
@@ -121,7 +121,7 @@ strong {
 }
 
 /* NAVBAR COLLAPSE ANIMATION */
-/* @keyframes navbarExpanded {
+@keyframes navbarExpanded {
   from {
     max-height: 0;
     overflow: hidden;
@@ -132,7 +132,7 @@ strong {
   }
 }
 
-@keyframes navbarCollapse {
+@keyframes navbarCollapsed {
   from {
     max-height: 500px;
     overflow: hidden;
@@ -141,7 +141,7 @@ strong {
     max-height: 0;
     overflow: hidden;
   }
-} */
+}
 
 /* -------------------------------------------------------LOGO CSS--------------------------------------------------------------- */
 
@@ -476,27 +476,6 @@ strong {
 
 /* -----------------------------------------------EXTRA SMALL DEVICES(PHONES)--------------------------------------------------------- */
 @media only screen and (max-width: 575px) {
-  @keyframes navbarExpanded {
-    from {
-      max-height: 0;
-      overflow: hidden;
-    }
-    to {
-      max-height: 500px;
-      overflow: hidden;
-    }
-  }
-  @keyframes navbarCollapsed {
-    from {
-      max-height: 500px;
-      overflow: hidden;
-    }
-    to {
-      max-height: 0;
-      overflow: hidden;
-    }
-  }
-
 
   .hamburger {
     display: block;
@@ -567,7 +546,7 @@ strong {
   /* ABOUT CSS */
 
   .container {
-    width: 71%;
+    width: 65%;
     display: block;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
@@ -577,9 +556,9 @@ strong {
     background-color: var(--container-color);
 
     border-top: 10px solid rgba(8, 8, 8, 0.1);
-    border-right:none;
+    border-right:2px solid rgba(8, 8, 8, 0.1);
     border-bottom:none;
-    border-left:none;
+    border-left:2px solid rgba(8, 8, 8, 0.1);
     padding: 30px 60px 50px 60px;
   }
 
@@ -689,8 +668,14 @@ strong {
 
 
   .navigationMenu.expanded ul {
+    animation: navbarExpanded .5s ease-in-out forwards;
     display: block;
   }
+  .navigationMenu.collapsed ul {
+    animation: navbarCollapsed .5s ease-in-out forwards;
+    display: block;
+  }
+
 
   /* LOGO */
 
@@ -724,7 +709,6 @@ strong {
   }
 
   .aboutsection2 {
-    font-size: .9rem;
     margin-top: 60px;
   }
 
@@ -759,12 +743,6 @@ strong {
     text-align: center;
   }
 
-  .carouselImage {
-    width: 100%;
-    height: 100%;
-    object-fit: fit;
-
-  }
 
   .carouselCaption p {
     font-size: .8rem;

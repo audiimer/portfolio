@@ -77,7 +77,7 @@ const CarouselComponent = () => {
             className={`${styles.carouselItem} ${index === currentIndex ? styles.active : ''}`}
           >
             <img
-              src={window.innerWidth >= 768 ? item.imageDesktop : item.imageMobile}
+              src={window.innerWidth >= 576 ? item.imageDesktop : item.imageMobile}
               className={styles.carouselImage}
               alt="..."
             />

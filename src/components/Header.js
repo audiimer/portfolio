@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import styles from '../styles.module.css';
 import Logo from './Logo';
 
 function Header({ setActiveComponent, setActiveButton }) {
   const [clickCount, setClickCount] = useState(0);
+  const navbarRef = useRef(null);
 
   const handleLinkClick = (event, component) => {
     event.preventDefault();
@@ -12,20 +13,38 @@ function Header({ setActiveComponent, setActiveButton }) {
       timelineOptionsElement.scrollIntoView();
       setActiveComponent(component);
       setActiveButton(component);
+      setClickCount(0);
     }
   };
-
-  const isNavExpanded = clickCount === 0 ? '' : clickCount % 2 !== 0 ? styles.expanded : styles.collapsed;
 
   const handleHamburgerClick = () => {
     setClickCount((prevCount) => prevCount + 1);
   };
 
+  useEffect(() => {
+    const handleClickOutsideNavbar = (event) => {
+      if (
+        navbarRef.current &&
+        !navbarRef.current.contains(event.target) &&
+        clickCount % 2 === 1
+      ) {
+        setClickCount(0);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutsideNavbar);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutsideNavbar);
+    };
+  }, [clickCount]);
+
+  const isNavExpanded = clickCount === 0 ? styles.navigationMenu: clickCount === 0 ? styles.navigationMenu: clickCount % 2 !== 0 ? styles.expanded : styles.collapsed;
+
   return (
     <div className={styles.header}>
-      <nav className={styles.navbar}>
+      <nav className={styles.navbar} ref={navbarRef}>
         <div className={styles.logoArea}>
-          <Logo></Logo>
+          <Logo />
         </div>
         <button className={styles.hamburger} onClick={handleHamburgerClick}>
           <svg
@@ -50,34 +69,22 @@ function Header({ setActiveComponent, setActiveButton }) {
               <a href="#about">About</a>
             </li>
             <li>
-              <a
-                href="#options"
-                onClick={(event) => handleLinkClick(event, 'projects')}
-              >
+              <a href="#options" onClick={(event) => handleLinkClick(event, 'projects')}>
                 Projects
               </a>
             </li>
             <li>
-              <a
-                href="#options"
-                onClick={(event) => handleLinkClick(event, 'experience')}
-              >
+              <a href="#options" onClick={(event) => handleLinkClick(event, 'experience')}>
                 Experience
               </a>
             </li>
             <li>
-              <a
-                href="#options"
-                onClick={(event) => handleLinkClick(event, 'education')}
-              >
+              <a href="#options" onClick={(event) => handleLinkClick(event, 'education')}>
                 Education
               </a>
             </li>
             <li>
-              <a
-                href="#options"
-                onClick={(event) => handleLinkClick(event, 'certification')}
-              >
+              <a href="#options" onClick={(event) => handleLinkClick(event, 'certification')}>
                 Certification
               </a>
             </li>
