@@ -300,17 +300,17 @@ strong {
 
 /* TEST */
 
-.test {
+.separator {
   margin: 0 100px 0 100px;
 }
 
-.test h1 {
+.separator h1 {
   font-size: 2.2rem;
   font-family: 'Satisfy', cursive;
   margin: 0 auto;
 }
 
-.test h1::before {
+.separator h1::before {
   content: "";
   margin-right: 20px;
 
@@ -599,13 +599,13 @@ strong {
 
   /* ABOUT CSS */
 
-  .test {
+  .separator {
     width: 95%;
     margin: auto;
     text-align: center;
   }
 
-  .test h1::before {
+  .separator h1::before {
     margin-right: 20px;
 
   }
@@ -769,13 +769,13 @@ strong {
 
 
   /* ABOUT CSS */
-  .test {
+  .separator {
     width: 95%;
     margin: auto;
     text-align: center;
   }
 
-  .test h1::before {
+  .separator h1::before {
     margin-right: 85px;
 
   }
@@ -865,13 +865,13 @@ strong {
 
 
   /* ABOUT CSS */
-  .test {
+  .separator {
     width: 95%;
     margin: auto;
     text-align: center;
   }
 
-  .test h1::before {
+  .separator h1::before {
     margin-right: 85px;
 
   }
@@ -919,13 +919,13 @@ strong {
     font-size: 1rem;
   }
 
-  .test {
+  .separator {
     width: 95%;
     margin: auto;
     text-align: center;
   }
 
-  .test h1::before {
+  .separator h1::before {
     margin-right: 85px;
 
   }
