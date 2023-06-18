@@ -28,7 +28,7 @@ function About() {
           </label>
         </form>
       </CustomModal>
-<section className={styles.test}>
+<section className={styles.separator}>
         <h1>My Journey .  .  .  </h1>
         <hr></hr>
         </section>
@@ -123,7 +123,7 @@ function About() {
           </div>
         </section>
       </div>
-      <section className={styles.test}>
+      <section className={styles.separator}>
           <hr></hr>
           </section>
     </div>

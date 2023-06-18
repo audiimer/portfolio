@@ -1,6 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
 
+@font-face {
+  font-family: 'sf_burlington_scriptbold';
+  src: url("./fonts/SF_Burlington_Script_Bold-webfont.woff") format('woff');
+
+  font-weight: normal;
+  font-style: normal;
+}
+
+
 :root {
   --background-color: #3aafa9;
   --header-color: #17242a;
@@ -305,8 +314,9 @@ strong {
 }
 
 .separator h1 {
-  font-size: 2.2rem;
-  font-family: 'Satisfy', cursive;
+  font-size: 3.5rem;
+font-family: sf_burlington_scriptbold;
+
   margin: 0 auto;
 }
 
@@ -644,7 +654,7 @@ strong {
     width: 140%;
     position: relative;
     text-align: center;
-     }
+  }
 
   .aboutsection2 p {
     text-align: justify;
