@@ -623,7 +623,7 @@ font-family: sf_burlington_scriptbold;
   .container {
     margin-right: 10px;
     padding: 30px 30px 50px 0;
-    width: 70%;
+    width: 60%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -656,9 +656,12 @@ font-family: sf_burlington_scriptbold;
     text-align: center;
   }
 
-  .aboutsection2 p {
-    text-align: justify;
-    width: 136%;
+  .aboutsection2 p{
+    width: 170%;
+
+  }
+  .aboutsection2 h1{
+    width: 170%;
 
   }
 
