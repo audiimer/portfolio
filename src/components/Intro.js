@@ -40,7 +40,7 @@ function Intro() {
                     <ul className={styles.introTitle}>
                         <li><a href="#">Computer Science Graduate & Self-Taught Programmer</a></li>
                     </ul>
-                    <a className={styles.btn} href='#about'>About Me</a>
+                    <a className={`${styles.button} ${styles.btn}`}href='#about'>About Me</a>
                 </section>
                 <section className={styles.imgcontainer}>
                     <img src={logo} alt="intropic" />

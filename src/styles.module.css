@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+
 :root {
   --background-color: #3aafa9;
   --header-color: #17242a;
@@ -12,10 +15,10 @@
 body {
   margin: 0 auto;
   background: linear-gradient(110deg, var(--background-color)40%, var(--secondary-color)100%);
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Josefin Sans', sans-serif;
   color: var(--primary-color);
   letter-spacing: 0.09em;
-  font-size: .7rem;
+  font-size: 1.1rem;
   line-height: 1.5;
 }
 
@@ -23,30 +26,36 @@ strong {
   color: #fff;
 }
 
-.btn {
+
+.button {
   margin-top: 20px;
-  padding: 10px 25px;
-  font-size: 1rem;
-  color: #fff;
+  padding: 10px 15px;
+  color: var(--primary-color);
   background: var(--header-color);
-  line-height: 1.5;
   cursor: pointer;
-  border-radius: 30px;
-  border: none;
-  transition: box-shadow 0.5s ease;
+  transition: box-shadow 0.5s ease, color 0.5s ease;
   text-decoration: none;
   text-align: center;
 }
 
-.btnContainer {
-  display: flex;
-  justify-content: space-between;
-
+.button:hover {
+  color: var(--alt-color);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
-.btn:hover {
-  box-shadow: 0 0 10px var(--alt-color);
+.btn {
+  border-radius: 30px;
+  border: none;
+  line-height: 1.5;
 }
+
+.icon {
+  padding: 10px 15px;
+  border-radius: 50%;
+  font-size: 1.4rem;
+}
+
+
 
 .header {
   border-bottom: 10px solid rgb(0, 0, 0);
@@ -85,7 +94,7 @@ strong {
 .navbar {
   width: 100%;
   display: flex;
-  justify-content:space-between;
+  justify-content: space-between;
   align-items: center;
   position: relative;
   padding: 0.5rem 0rem;
@@ -126,6 +135,7 @@ strong {
     max-height: 0;
     overflow: hidden;
   }
+
   to {
     max-height: 500px;
     overflow: hidden;
@@ -137,6 +147,7 @@ strong {
     max-height: 500px;
     overflow: hidden;
   }
+
   to {
     max-height: 0;
     overflow: hidden;
@@ -150,7 +161,7 @@ strong {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-/* -------------------------------------------------------INTRO CSS (MAIN PICTURE)--------------------------------------------------------------- */
+/* --------------------------------------------------INTRO CSS (MAIN PICTURE)---------------------------------------------------------- */
 .letter {
 
   display: inline-block;
@@ -258,7 +269,6 @@ strong {
 }
 
 .introTitle a {
-  font-size: 1.5em;
   color: #ffffff;
   text-decoration: none;
   letter-spacing: 0.15em;
@@ -288,33 +298,41 @@ strong {
 
 /* -------------------------------------------------------ABOUT SECTION CSS--------------------------------------------------------------- */
 
-.container {
-  border-top-left-radius: 37px 140px;
-  border-top-right-radius: 23px 130px;
-  border-bottom-left-radius: 110px 19px;
-  border-bottom-right-radius: 120px 24px;
+/* TEST */
 
+.test {
+  margin: 0 100px 0 100px;
+}
+
+.test h1 {
+  font-size: 2.2rem;
+  font-family: 'Satisfy', cursive;
+  margin: 0 auto;
+}
+
+.test h1::before {
+  content: "";
+  margin-right: 20px;
+
+}
+
+.container {
   display: flex;
   justify-content: center;
-  background-color: var(--container-color);
-  border: solid 3px var(--header-color);
-  padding: 0 60px 50px 60px;
-  width: 70%;
-  margin: 200px auto 200px;
-
+  width: 95%;
+  margin: 100px 0 100px 40px;
   line-height: 2rem;
-  box-shadow: 3px 15px 8px -10px rgba(0, 0, 0, 0.3);
   transition: all 0.13s ease-in;
 
 }
 
 .aboutsection1 {
-  padding: 0 50px;
+  padding: 0 70px;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  height: 80vh;
+  height: 60vh;
   justify-content: center;
 }
 
@@ -322,17 +340,36 @@ strong {
 .aboutsection1 img {
   width: 250px;
   height: 300px;
-  border: solid 2px black;
-  border-radius: 20px;
+  border-radius: 50%;
+}
+
+.iconWrapper {
+  display: flex;
+  flex-direction: column;
 }
 
 .aboutsection2 {
-  font-size: 1rem;
-  margin-top: 110px;
+  padding: 0 90px 0 40px;
+}
+
+.aboutsection2 p {
+  margin-bottom: 30px;
+}
+
+.aboutsection2 p::before {
+  content: "→   ";
+  font-size: 1.5;
+  font-weight: bolder;
 }
 
 .aboutsection2 button {
   margin: 0 30px auto 0;
+}
+
+.btnContainer {
+  display: flex;
+  justify-content: safe;
+  justify-content: space-evenly;
 }
 
 /* ------------------------------------------------------- TIMELINE BUTTONS CSS --------------------------------------------------------------- */
@@ -341,25 +378,44 @@ strong {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  /* transform-style: preserve-3d; */
+  backface-visibility: hidden;
 }
 
 .timelinebtn {
+  font-family: 'Josefin Sans', sans-serif;
   color: #fff;
   background: var(--header-color);
   border: none;
   padding: 10px 30px;
   transform: skewX(-40deg);
   cursor: pointer;
-  transition: all 0.7s ease;
+  transition: all 0.3s ease;
 }
 
 .timelinebtn:hover {
   color: var(--alt-color);
+
+}
+
+.timelinebtn:hover {
+  color: var(--alt-color);
+  transform: skewX(0deg);
+}
+
+.timelinebtn:hover p {
+  color: var(--alt-color);
+  transform: skewX(0deg);
 }
 
 .timelinebtn.active {
   color: var(--alt-color);
+  transform: skewX(0deg);
+}
 
+.timelinebtn.active p {
+  color: var(--alt-color);
+  transform: skewX(0deg);
 }
 
 .timelinebtn p {
@@ -383,10 +439,10 @@ strong {
 
 .carousel {
   position: relative;
-  width: 55%;
-  margin: 100px auto 300px;
-  border: 10px solid;
-  border-image: linear-gradient(to right, var(--secondary-color), var(--background-color)) 1;
+  width: 70%;
+  margin: 100px auto 100px;
+  border: 10px solid black;
+  /* border-image: linear-gradient(to right, var(--secondary-color), var(--background-color)) 1; */
   border-radius: 10px;
 }
 
@@ -412,7 +468,7 @@ strong {
 .carouselImage {
   width: 100%;
   height: 100%;
-  object-fit: fill;
+  object-fit: cover;
 }
 
 .carouselCaption {
@@ -484,7 +540,7 @@ strong {
   .navbar ul {
     display: none;
     position: absolute;
-    top: 80px;
+    top: 110px;
     right: 0px;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.9);
@@ -503,6 +559,7 @@ strong {
     animation: navbarExpanded .5s ease-in-out forwards;
     display: block;
   }
+
   .navigationMenu.collapsed ul {
     animation: navbarCollapsed .5s ease-in-out forwards;
     display: block;
@@ -516,7 +573,7 @@ strong {
   .intro {
     display: flex;
     flex-direction: column;
-    margin: 100px 40px 300px 40px;
+    margin: 100px 20px 300px 20px;
     padding: 30px 0;
     text-align: center;
     background-size: 50px 30px;
@@ -531,9 +588,6 @@ strong {
     font-size: 1.5rem;
   }
 
-  .introTitle {
-    font-size: .5rem;
-  }
 
   .imgcontainer {
     order: -1;
@@ -545,57 +599,68 @@ strong {
 
   /* ABOUT CSS */
 
+  .test {
+    width: 95%;
+    margin: auto;
+    text-align: center;
+  }
+
+  .test h1::before {
+    margin-right: 20px;
+
+  }
+
   .container {
-    width: 65%;
-    display: block;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-
-    background-color: var(--container-color);
-
-    border-top: 10px solid rgba(8, 8, 8, 0.1);
-    border-right:2px solid rgba(8, 8, 8, 0.1);
-    border-bottom:none;
-    border-left:2px solid rgba(8, 8, 8, 0.1);
-    padding: 30px 60px 50px 60px;
+    margin-right: 10px;
+    padding: 30px 30px 50px 0;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
+  .iconWrapper {
+    display: inline-block;
+    margin-top: 20px;
 
-  .container a {
-    font-size: .9rem;
-    margin: 10px -10px;
-    padding: 10px 20px;
   }
+
+  .iconWrapper a:first-child {
+    margin-right: 30px;
+  }
+
 
   .aboutsection1 {
-    height: auto;
+    margin-left: 50px;
   }
 
   .aboutsection2 {
-    font-size: 1rem;
-    margin-top: 60px;
-  }
-
-
-  .aboutsection1 img {
-    width: 220px;
-    height: 220px;
+    width: 85%;
+    font-size: .9rem;
   }
 
   .aboutsection2 h1 {
+    margin: 40px 0;
+    width: 140%;
+    position: relative;
     text-align: center;
-    font-size: 1.4rem;
-    padding-bottom: 40px;
-    margin: 0 -60px;
-  }
+     }
 
   .aboutsection2 p {
-    text-align: justify; /*It really is a love/hate situation with you*/
-    margin: 0 -30px;
-    padding-bottom: 20px;
+    text-align: justify;
+    width: 136%;
+
   }
+
+  .btnContainer {
+    margin: 0 -130px 0 -50px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+
+
 
   .timeline {
     display: flex;
@@ -617,8 +682,8 @@ strong {
     flex-basis: calc(50% - 20px);
   }
 
-   /* CAROUSEL CSS */
-   .carousel {
+  /* CAROUSEL CSS */
+  .carousel {
     width: 100%;
     text-align: center;
     border: none;
@@ -645,6 +710,7 @@ strong {
 /* -----------------------------------------------SMALL DEVICES(TABLETS)--------------------------------------------------------- */
 @media only screen and (min-width: 576px) and (max-width: 767px) {
 
+
   .hamburger {
     display: block;
   }
@@ -652,7 +718,7 @@ strong {
   .navbar ul {
     display: none;
     position: absolute;
-    top: 80px;
+    top: 110px;
     right: 0px;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.9);
@@ -671,6 +737,7 @@ strong {
     animation: navbarExpanded .5s ease-in-out forwards;
     display: block;
   }
+
   .navigationMenu.collapsed ul {
     animation: navbarCollapsed .5s ease-in-out forwards;
     display: block;
@@ -687,6 +754,11 @@ strong {
     text-align: center;
   }
 
+
+  .introTitle a {
+    font-size: .9rem;
+  }
+
   .imgcontainer {
     order: -1;
   }
@@ -695,21 +767,40 @@ strong {
     width: 300px;
   }
 
+
   /* ABOUT CSS */
+  .test {
+    width: 95%;
+    margin: auto;
+    text-align: center;
+  }
+
+  .test h1::before {
+    margin-right: 85px;
+
+  }
 
   .container {
-    width: 80%;
-    display: block;
-    padding-top: 30px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .iconWrapper {
+    display: inline-block;
+    margin-top: 20px;
 
   }
 
-  .aboutsection1 {
-    height: auto;
+  .iconWrapper a:first-child {
+    margin-right: 30px;
   }
+
 
   .aboutsection2 {
-    margin-top: 60px;
+    /* font-size: 1rem; */
+    padding: 0 40px;
   }
 
 
@@ -757,6 +848,10 @@ strong {
 /* -----------------------------------------------MEDIUM DEVICES(LAPTOPS, DESKTOPS)--------------------------------------------------------- */
 @media only screen and (min-width: 768px) and (max-width: 991px) {
 
+  .navbar {
+    font-size: .6rem;
+  }
+
   /* Styles for medium devices */
   .intro {
     margin: 100px 10px 300px 10px;
@@ -770,19 +865,38 @@ strong {
 
 
   /* ABOUT CSS */
+  .test {
+    width: 95%;
+    margin: auto;
+    text-align: center;
+  }
+
+  .test h1::before {
+    margin-right: 85px;
+
+  }
+
   .container {
-    width: 80%;
-    display: block;
-    padding-top: 30px;
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .iconWrapper {
+    display: inline-block;
+    margin-top: 20px;
 
   }
 
-  .aboutsection1 {
-    height: auto;
+  .iconWrapper a:first-child {
+    margin-right: 30px;
   }
+
 
   .aboutsection2 {
-    margin-top: 60px;
+    /* font-size: 1rem; */
+    padding: 0 40px;
   }
 
   .carousel {
@@ -794,6 +908,7 @@ strong {
 /* -----------------------------------------------LARGE DEVICES(LAPTOPS, DESKTOPS)--------------------------------------------------------- */
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
 
+
   .intro {
     margin: 100px 20px 300px 20px;
     padding: 0 20px 0 20px;
@@ -801,24 +916,42 @@ strong {
 
 
   .introTitle {
-    font-size: .6rem;
+    font-size: 1rem;
+  }
+
+  .test {
+    width: 95%;
+    margin: auto;
+    text-align: center;
+  }
+
+  .test h1::before {
+    margin-right: 85px;
+
   }
 
   /* ABOUT CSS */
   .container {
-    width: 80%;
-    display: block;
-    padding-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .iconWrapper {
+    display: inline-block;
+    margin-top: 20px;
 
   }
 
-  .aboutsection1 {
-    height: auto;
+  .iconWrapper a:first-child {
+    margin-right: 30px;
   }
 
   .aboutsection2 {
-    margin-top: 60px;
+    /* font-size: .9rem; */
+    padding: 0 20px;
   }
+
 
   .carousel {
     width: 97%;

@@ -390,6 +390,9 @@ h5 {
 
 /* -----------------------------------------------LARGE DEVICES(LAPTOPS, DESKTOPS)--------------------------------------------------------- */
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
+    .bodyContainer{
+        background-color: red;
+    }
 
     .timeline::after {
         left: 90px;

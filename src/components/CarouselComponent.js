@@ -86,7 +86,7 @@ const CarouselComponent = () => {
               <p>{item.description}</p>
               <a
                 href={currentCodeSource}
-                className={styles.btn}
+                className={`${styles.button} ${styles.btn}`}
                 target="_blank"
                 rel="noreferrer"
               >
