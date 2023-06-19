@@ -8,9 +8,9 @@ function TimelineOptions({ setActiveComponent, activeButton, setActiveButton }) 
   };
 
   return (
-    <div id="options">
+    <div >
       <section className={styles.timeline}>
-        <button href="#options"
+        <button
           className={`${styles.timelinebtn} ${activeButton === "projects" ? styles.active : ''}`}
           onClick={() => handleButtonClick("projects")}
         >
@@ -33,7 +33,7 @@ function TimelineOptions({ setActiveComponent, activeButton, setActiveButton }) 
           onClick={() => handleButtonClick("certification")}
         >
           <p>Certification</p>
-        </button>
+        </button >
       </section>
     </div>
   );

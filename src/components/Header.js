@@ -8,13 +8,20 @@ function Header({ setActiveComponent, setActiveButton }) {
 
   const handleLinkClick = (event, component) => {
     event.preventDefault();
-    const timelineOptionsElement = document.getElementById("options");
-    if (timelineOptionsElement) {
-      timelineOptionsElement.scrollIntoView();
+    if (component === "projects" || component === "experience" || component === "education" || component === "certification") {
+      const optionsElement = document.getElementById("options");
+      if (optionsElement) {
+        optionsElement.scrollIntoView({ behavior: "smooth" });
+      }
       setActiveComponent(component);
       setActiveButton(component);
-      setClickCount(0);
+    } else {
+      const targetElement = document.getElementById(component);
+      if (targetElement) {
+        targetElement.scrollIntoView({ behavior: "smooth" });
+      }
     }
+    setClickCount(0);
   };
 
   const handleHamburgerClick = () => {
@@ -71,10 +78,10 @@ function Header({ setActiveComponent, setActiveButton }) {
         <div className={`${styles.navigationMenu} ${isNavExpanded}`}>
           <ul>
             <li>
-              <a href="#intro">Home</a>
+              <a href="#intro" onClick={(event) => handleLinkClick(event, "intro")}>Home</a>
             </li>
             <li>
-              <a href="#about">About</a>
+              <a href="#about" onClick={(event) => handleLinkClick(event, "about")}>About</a>
             </li>
             <li>
               <a

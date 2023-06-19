@@ -60,7 +60,7 @@ function App() {
   };
 
   return (
-    <div className={styles.bodyContainer}>
+    <div className={styles.bodyContainer} >
       <Header
         setActiveComponent={handleComponentClick}
         activeButton={activeButton}

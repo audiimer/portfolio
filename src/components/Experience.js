@@ -6,7 +6,7 @@ import { faBriefcase } from '@fortawesome/free-solid-svg-icons';
 
 function Experience() {
     return (
-        <div id='experience'>
+        <div id="options">
             <div className={timeline.timeline}>
                 <div className={`${timeline.container} ${timeline.left}`}>
                     <div className={timeline.date}>2022 - 2023</div>
