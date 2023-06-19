@@ -117,7 +117,7 @@ function About() {
             >
               View Resume
             </a>
-            <a className={`${styles.button} ${styles.btn}`} onClick={openModal} href="#about">
+            <a className={`${styles.button} ${styles.btn}`} onClick={openModal}>
               Contact Me
             </a>
           </div>
