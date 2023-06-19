@@ -19,7 +19,7 @@ function Experience() {
 
                         <p> Created test automation features to validate user inputs such as create, update, and remove.</p>
 
-                        <p> Managed multiple features to deploy different testing scenarios using <strong>GET/POST/PUT/PATCH/DELETE</strong>.</p>
+                        <p> Managed multiple features to deploy different testing scenarios using <strong>GET / POST / PUT / PATCH / DELETE</strong>.</p>
 
                         <p> Maintained constant communication with the development team to ensure tickets were done before the next software update.</p>
 

@@ -315,7 +315,7 @@ strong {
 
 .separator h1 {
   font-size: 3.5rem;
-font-family: sf_burlington_scriptbold;
+  font-family: sf_burlington_scriptbold;
 
   margin: 0 auto;
 }
@@ -329,15 +329,13 @@ font-family: sf_burlington_scriptbold;
 .container {
   display: flex;
   justify-content: center;
-  width: 95%;
-  margin: 100px 0 100px 40px;
+  margin: 40px 100px;
   line-height: 2rem;
   transition: all 0.13s ease-in;
 
 }
 
 .aboutsection1 {
-  padding: 0 70px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -359,7 +357,7 @@ font-family: sf_burlington_scriptbold;
 }
 
 .aboutsection2 {
-  padding: 0 90px 0 40px;
+  padding: 0 0px 0 50px;
 }
 
 .aboutsection2 p {
@@ -377,8 +375,8 @@ font-family: sf_burlington_scriptbold;
 }
 
 .btnContainer {
+  margin-bottom: 40px;
   display: flex;
-  justify-content: safe;
   justify-content: space-evenly;
 }
 
@@ -452,7 +450,6 @@ font-family: sf_burlington_scriptbold;
   width: 70%;
   margin: 100px auto 100px;
   border: 10px solid black;
-  /* border-image: linear-gradient(to right, var(--secondary-color), var(--background-color)) 1; */
   border-radius: 10px;
 }
 
@@ -541,6 +538,7 @@ font-family: sf_burlington_scriptbold;
 
 
 /* -----------------------------------------------EXTRA SMALL DEVICES(PHONES)--------------------------------------------------------- */
+
 @media only screen and (max-width: 575px) {
 
   .hamburger {
@@ -621,9 +619,7 @@ font-family: sf_burlington_scriptbold;
   }
 
   .container {
-    padding: 0 30px 50px 30px;
-    width: 45%;
-    display: flex;
+    margin: 0 auto;
     flex-direction: column;
     align-items: center;
 
@@ -641,35 +637,22 @@ font-family: sf_burlington_scriptbold;
 
 
   .aboutsection1 {
-    margin-left: 50px;
+    margin: 0 auto;
   }
 
   .aboutsection2 {
-    width: 110%;
+    padding: 0 20px;
     font-size: .9rem;
   }
 
   .aboutsection2 h1 {
-    margin: 40px 0;
-    position: relative;
     text-align: center;
+    font-size: 1.2rem;
   }
 
-  .aboutsection2 p{
-    width: 170%;
-    text-align: justify;
-
-  }
-  .aboutsection2 h1{
-    width: 170%;
-
-  }
 
   .btnContainer {
-    margin: 0 -150px 0 -30px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+    justify-content: space-between;
   }
 
 
@@ -720,7 +703,6 @@ font-family: sf_burlington_scriptbold;
 
 /* -----------------------------------------------SMALL DEVICES(TABLETS)--------------------------------------------------------- */
 @media only screen and (min-width: 576px) and (max-width: 767px) {
-
 
   .hamburger {
     display: block;
@@ -792,11 +774,12 @@ font-family: sf_burlington_scriptbold;
   }
 
   .container {
-    width: 90%;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
   }
+
 
   .iconWrapper {
     display: inline-block;
@@ -810,10 +793,17 @@ font-family: sf_burlington_scriptbold;
 
 
   .aboutsection2 {
-    /* font-size: 1rem; */
-    padding: 0 40px;
+    margin: 0 40px;
+    padding: 0;
   }
 
+  .aboutsection2 h1 {
+    text-align: center;
+  }
+
+  .btnContainer {
+    justify-content: space-between;
+  }
 
   .timeline {
     display: flex;
@@ -859,6 +849,7 @@ font-family: sf_burlington_scriptbold;
 /* -----------------------------------------------MEDIUM DEVICES(LAPTOPS, DESKTOPS)--------------------------------------------------------- */
 @media only screen and (min-width: 768px) and (max-width: 991px) {
 
+
   .navbar {
     font-size: .6rem;
   }
@@ -888,7 +879,7 @@ font-family: sf_burlington_scriptbold;
   }
 
   .container {
-    width: 95%;
+    margin: 0 40px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -905,11 +896,6 @@ font-family: sf_burlington_scriptbold;
   }
 
 
-  .aboutsection2 {
-    /* font-size: 1rem; */
-    padding: 0 40px;
-  }
-
   .carousel {
     width: 97%;
   }
@@ -918,6 +904,9 @@ font-family: sf_burlington_scriptbold;
 
 /* -----------------------------------------------LARGE DEVICES(LAPTOPS, DESKTOPS)--------------------------------------------------------- */
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
+
+
+
 
 
   .intro {
@@ -959,9 +948,9 @@ font-family: sf_burlington_scriptbold;
   }
 
   .aboutsection2 {
-    /* font-size: .9rem; */
     padding: 0 20px;
   }
+
 
 
   .carousel {

@@ -30,6 +30,7 @@ function Header({ setActiveComponent, setActiveButton }) {
       ) {
         setClickCount(0);
       }
+      console.log(clickCount)
     };
 
     document.addEventListener("mousedown", handleClickOutsideNavbar);
