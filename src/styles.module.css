@@ -340,7 +340,9 @@ strong {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  height: 60vh;
+  padding-bottom: 450px;
+
+
   justify-content: center;
 }
 
@@ -446,7 +448,7 @@ strong {
 
 .carousel {
   position: relative;
-  width:70%;
+  width: 70%;
   margin: 100px auto 100px;
   border: 10px solid black;
   border-radius: 10px;
@@ -474,7 +476,7 @@ strong {
   position: absolute;
   width: 100%;
   height: 100%;
-  object-fit:fill;
+  object-fit: fill;
 }
 
 .carouselCaption {
@@ -636,7 +638,7 @@ strong {
 
 
   .aboutsection1 {
-    height: auto;
+    padding-bottom: 20px;
     margin: 0 auto;
   }
 
@@ -684,10 +686,10 @@ strong {
   }
 
   .carouselImage {
-    position: static!important;
+    position: static !important;
     width: 100%;
     height: 100%;
-    object-fit:fit;
+    object-fit: fit;
 
   }
 
@@ -798,9 +800,11 @@ strong {
     padding: 0;
   }
 
-  .aboutsection1{
-    height: auto;
+  .aboutsection1 {
+    padding-bottom: 20px;
+
   }
+
   .aboutsection2 h1 {
     text-align: center;
   }
@@ -838,11 +842,12 @@ strong {
     width: 95%;
     text-align: center;
   }
+
   .carouselImage {
-    position: static!important;
+    position: static !important;
     width: 100%;
     height: 100%;
-    object-fit:fit;
+    object-fit: fit;
 
   }
 
@@ -898,13 +903,15 @@ strong {
   .iconWrapper {
     display: inline-block;
     margin-top: 20px;
-
   }
 
   .iconWrapper a:first-child {
     margin-right: 30px;
   }
 
+  .aboutsection1 {
+    padding-bottom: 20px;
+  }
 
   .carousel {
     width: 97%;
@@ -914,10 +921,6 @@ strong {
 
 /* -----------------------------------------------LARGE DEVICES(LAPTOPS, DESKTOPS)--------------------------------------------------------- */
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
-
-
-
-
 
   .intro {
     margin: 100px 20px 300px 20px;
@@ -956,6 +959,11 @@ strong {
   .iconWrapper a:first-child {
     margin-right: 30px;
   }
+
+  .aboutsection1 {
+    padding-bottom: 20px;
+  }
+
 
   .aboutsection2 {
     padding: 0 20px;
