@@ -446,7 +446,7 @@ strong {
 
 .carousel {
   position: relative;
-  width:90%;
+  width:70%;
   margin: 100px auto 100px;
   border: 10px solid black;
   border-radius: 10px;
@@ -960,7 +960,7 @@ strong {
 
 
   .carousel {
-    width: 97%;
+    width: 80%;
   }
 
 
