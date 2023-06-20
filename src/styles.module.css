@@ -636,6 +636,7 @@ strong {
 
 
   .aboutsection1 {
+    height: auto;
     margin: 0 auto;
   }
 
@@ -797,6 +798,9 @@ strong {
     padding: 0;
   }
 
+  .aboutsection1{
+    height: auto;
+  }
   .aboutsection2 h1 {
     text-align: center;
   }
