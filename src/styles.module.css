@@ -307,8 +307,6 @@ strong {
 
 /* -------------------------------------------------------ABOUT SECTION CSS--------------------------------------------------------------- */
 
-/* TEST */
-
 .separator {
   margin: 0 100px 0 100px;
 }
@@ -340,11 +338,9 @@ strong {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding-bottom: 450px;
-
-
-  justify-content: center;
+  min-height: 100vh;
 }
+
 
 
 .aboutsection1 img {
@@ -640,11 +636,13 @@ strong {
   .aboutsection1 {
     padding-bottom: 20px;
     margin: 0 auto;
+    min-height: auto;
   }
 
   .aboutsection2 {
     padding: 0 20px;
     font-size: .9rem;
+
   }
 
   .aboutsection2 h1 {
@@ -802,7 +800,7 @@ strong {
 
   .aboutsection1 {
     padding-bottom: 20px;
-
+    min-height: auto;
   }
 
   .aboutsection2 h1 {
@@ -911,6 +909,7 @@ strong {
 
   .aboutsection1 {
     padding-bottom: 20px;
+    min-height: auto;
   }
 
   .carousel {
@@ -962,6 +961,7 @@ strong {
 
   .aboutsection1 {
     padding-bottom: 20px;
+    min-height: auto;
   }
 
 
