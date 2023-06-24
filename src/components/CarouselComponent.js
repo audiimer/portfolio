@@ -13,6 +13,13 @@ const CarouselComponent = () => {
       codeSource: 'https://github.com/audiimer/vending-machine',
     },
     {
+      imageMobile: require('../images/projects/mobile/calculator.png'),
+      imageDesktop: require('../images/projects/desktop/calculator.png'),
+      title: 'Calculator',
+      description: 'This is a basic calculator app built using React.js',
+      codeSource: 'https://github.com/audiimer/react-calculator',
+    },
+    {
       imageMobile: require('../images/projects/mobile/tic-tac-toe.png'),
       imageDesktop: require('../images/projects/desktop/tic-tac-toe.png'),
       title: 'Tic Tac Toe',
