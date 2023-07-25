@@ -6,7 +6,7 @@ function Logo() {
 
     return (
       <div className={styles.logo} >
-        <h1>React.JS Portfolio</h1>
+        <h1>React.js Portfolio</h1>
       </div>
     );
   }

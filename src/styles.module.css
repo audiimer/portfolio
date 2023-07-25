@@ -18,6 +18,7 @@
   --secondary-color: #eedac1;
   --alt-color: #13f5f5;
 
+
 }
 
 /* -------------------------------------------------------GENERAL CSS--------------------------------------------------------------- */
@@ -262,12 +263,16 @@ strong {
 }
 
 .imgcontainer {
-  border: solid 10px var(--secondary-color);
+  border: solid 10px var(--header-color);
   border-radius: 50%;
+  padding: 0 auto;
+  max-height: 370px;
 }
 
 .imgcontainer img {
-  width: 350px;
+  border: solid 10px var(--secondary-color);
+  max-width: 350px;
+  max-height: 350px;
   border-radius: 50%;
 }
 
@@ -277,7 +282,7 @@ strong {
   max-width: 600px;
 }
 
-.introTitle a {
+.introTitle li {
   color: #ffffff;
   text-decoration: none;
   letter-spacing: 0.15em;
@@ -286,7 +291,7 @@ strong {
   position: relative;
 }
 
-.introTitle a::after {
+.introTitle li::after {
   content: "";
   position: absolute;
   bottom: 10px;
@@ -299,7 +304,7 @@ strong {
   transition: width 0.3s ease 0s, left 0.3s ease 0s;
 }
 
-.introTitle a:hover::after {
+.introTitle li:hover::after {
   width: 100%;
   left: 0;
 }
@@ -501,7 +506,7 @@ strong {
 
 .carouselCaption a {
   font-size: 16px;
-  margin-right: 20px;
+  margin-left: 10px;
 }
 
 .carouselItem.active .carouselCaption {
@@ -595,6 +600,7 @@ strong {
 
 
   .imgcontainer {
+    max-height: 325px;
     order: -1;
   }
 
@@ -696,7 +702,7 @@ strong {
   }
 
   .carouselCaption a {
-    margin-left: 10px;
+    margin:0 auto;
   }
 
 }
@@ -754,6 +760,9 @@ strong {
   }
 
   .imgcontainer {
+
+    max-height: 325px;
+
     order: -1;
   }
 
@@ -854,7 +863,7 @@ strong {
   }
 
   .carouselCaption a {
-    margin-left: 10px;
+    margin:0 auto;
   }
 
 }
@@ -873,9 +882,13 @@ strong {
     padding: 0 30px 0 30px;
   }
 
+  .imgcontainer {
+    max-height: 295px;
+  }
 
   .imgcontainer img {
     width: 270px;
+
   }
 
 
