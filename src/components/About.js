@@ -34,7 +34,6 @@ function About() {
       </section>
       <div className={`${styles.container} ${styles.transitioneffect}`}>
         <section className={styles.aboutsection1}>
-
           <img src={profile} alt="profilepic" />
 
           <div className={styles.iconWrapper}>
@@ -60,19 +59,20 @@ function About() {
           <h1>console.log("Hello, World!");</h1>
 
           <p>
-            My name is Audis Mercado. I hold a{" "}
+            Hi, I'm Audis Mercado, a passionate learner with a diverse
+            background in technology and business. I hold a{" "}
             <strong>
-              Bachelor in Business Administration in Human Resource Management,
-              an Associate of Applied Sciences in Computer Science
-
-            , and I'm pursuing a Master of Science in Computer Science</strong>.
-            I've also completed an IT Bootcamp where I obtained the Google
-            Support Professional Certificate. Subsequently, I made the decision
-            to focus on becoming a self-taught programmer. I started by
-            purchasing courses on platforms like Udemy and Coursera, through
-            which I acquired certifications in programming languages such as
-            Python and HTML/CSS & JavaScript since I had already learned Java
-            and C# during my time in college.
+              Bachelor's degree in Business Administration with a focus on Human
+              Resource Management
+            </strong>
+            , an{" "}
+            <strong>Associate of Applied Sciences in Computer Science</strong>,
+            and I'm currently pursuing a{" "}
+            <strong>Master of Science in Computer Science</strong>. To
+            complement my formal education, I have completed the{" "}
+            <strong>Google IT Support Professional Certificate</strong> and
+            acquired certifications in{" "}
+            <strong>Python, HTML/CSS, JavaScript, Java, and C#</strong>.
           </p>
 
           <p>
@@ -88,24 +88,24 @@ function About() {
             , and more.
           </p>
           <p>
-            What makes App Academy particularly appealing is their curriculum,
-            which not only covers advanced concepts but also emphasizes
-            essential principles. They teach the{" "}
+            What sets App Academy apart is their comprehensive curriculum that
+            not only covers advanced topics but also focuses on essential coding
+            principles. They emphasize the{" "}
             <strong>
-              importance of writing clean code, provide debugging techniques,
-              testing strategies, and understanding JavaScript errors
+              importance of writing clean code, debugging techniques, testing
+              strategies, and understanding JavaScript errors
             </strong>
-            . Furthermore, the program offers valuable hands-on experience
-            through small and <strong>capstone projects</strong>.
+            . I'm excited about the hands-on experience offered through{" "}
+            <strong>capstone projects</strong>, which will allow me to apply my
+            learning in real-world scenarios.
           </p>
 
           <p>
-            With the opportunity to be selected, I am confident that I can be a
-            valuable resource for your company's requirements. Combining my
-            academic background, certifications, and learning from the
-            experiences within your organization, my ultimate goal is to become
-            a skilled <strong>Full-Stack Software Engineer</strong> and apply my
-            expertise in a professional setting.
+            I believe that with my academic background, certifications, and
+            dedication to learning, I can bring value to your company's
+            requirements. My ultimate goal is to become a{" "}
+            <strong>skilled Full-Stack Software Engineer</strong> and make
+            meaningful contributions to a professional team like yours.
           </p>
 
           <div className={styles.btnContainer}>
