@@ -72,7 +72,7 @@ function About() {
             complement my formal education, I have completed the{" "}
             <strong>Google IT Support Professional Certificate</strong> and
             acquired certifications in{" "}
-            <strong>Python, HTML/CSS, JavaScript, Java, and C#</strong>.
+            <strong>Python, HTML/CSS, and JavaScript</strong>.
           </p>
 
           <p>

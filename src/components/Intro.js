@@ -38,7 +38,7 @@ function Intro() {
                         <span className={styles.letter}>o</span>
                     </h1>
                     <ul className={styles.introTitle}>
-                        <li>Computer Science Graduate & Self-Taught Programmer</li>
+                        <li>Computer Science Student & Self-Taught Programmer</li>
                     </ul>
                     <a className={`${styles.button} ${styles.btn}`}href='#about'>About Me</a>
                 </section>
