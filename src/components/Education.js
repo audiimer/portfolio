@@ -45,7 +45,7 @@ function Education() {
           </i>
           <div className={timeline.content}>
             <h2>App Academy Open</h2>
-            <h2>Full-stack Software Engineer Bootcamp</h2>
+            <h2>Full-Stack Software Engineer Bootcamp</h2>
             <hr></hr>
 
             <p>

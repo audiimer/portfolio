@@ -91,7 +91,7 @@ function Certification() {
             <FontAwesomeIcon icon={faTrophy} />
           </i>
           <div className={timeline.content}>
-            <h2>ACADEMIC EXCELENCE CERTIFICATE</h2>
+            <h2>Academic Excelence Certificate</h2>
             <p>By Inter american University of Puerto Rico</p>
             <hr></hr>
 
