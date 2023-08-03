@@ -12,7 +12,7 @@ function Experience() {
                     <div className={timeline.date}>2022 - 2023</div>
                     <i className={`${timeline.icon} `}><FontAwesomeIcon icon={faBriefcase} /></i>
                     <div className={timeline.content}>
-                        <h2>SOFTWARE QUALITY ASSURANCE ENGINEER (INTERNSHIP)</h2>
+                        <h2>Software Quality Assurance Engineer (Internship)</h2>
                         <h5>Medtel.com / Old Greenwich, CT</h5>
 
                         <p>Found, reported, and documented any backend bugs to ensure a quality product for the customer on its release date.</p>
@@ -29,7 +29,7 @@ function Experience() {
                     <div className={timeline.date}>2021 - 2023</div>
                     <i className={`${timeline.icon}`}><FontAwesomeIcon icon={faBriefcase} /></i>
                     <div className={timeline.content}>
-                        <h2>INBOUND VENDOR RECEIVE/CUSTOMER RETURNS ASSOCIATE</h2>
+                        <h2>Inbound Vendor Receive / Customer Returns Associate</h2>
                         <h5>Amazon / Easton, PA</h5>
 
                         <p>Consistently met or exceeded productivity quota of receiving, scanning, and processing 1000 items per day.</p>
@@ -47,7 +47,7 @@ function Experience() {
                     <div className={timeline.date}>2019 - 2021</div>
                     <i className={`${timeline.icon}`}><FontAwesomeIcon icon={faBriefcase} /></i>
                     <div className={timeline.content}>
-                    <h2>RETAIL MERCHANDISE ASSOCIATE</h2>
+                    <h2>Retail Merchandise Associate</h2>
                         <h5>The TJX Companies, Inc. / Aguadilla, PR</h5>
 
                         <p>Delivered high-quality customer experiences by greeting customers and responding in a friendly, professional manner to inquiries regarding product location and availability.</p>
@@ -63,7 +63,7 @@ function Experience() {
                     <div className={timeline.date}>2013 – 2019</div>
                     <i className={`${timeline.icon} ${timeline.fa} ${timeline['fa-home']}`}><FontAwesomeIcon icon={faBriefcase} /></i>
                     <div className={timeline.content}>
-                    <h2>SALES FLOOR SUPERVISOR</h2>
+                    <h2>Sales Floor Supervisor</h2>
                         <h5>Kmart Corporation /Aguadilla, PR</h5>
 
                         <p>Planned and coordinated special activities during high movement periods such as weekend sales, seasonal clearance, and special promotions to achieve store’s $80k-$100k daily sales goals.</p>
@@ -79,7 +79,7 @@ function Experience() {
                     <div className={timeline.date}>2016 - 2017</div>
                     <i className={`${timeline.icon} ${timeline.fa} ${timeline['fa-home']}`}><FontAwesomeIcon icon={faBriefcase} /></i>
                     <div className={timeline.content}>
-                    <h2>HUMAN RESOURCES ANALYST (INTERNSHIP)</h2>
+                    <h2>Human Resources Analyst (Internship)</h2>
                         <h5>Town Hall /Isabela, PR</h5>
 
                         <p>Improved efficiency of hiring process by updating out-of-date job descriptions.</p>

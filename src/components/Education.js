@@ -14,7 +14,7 @@ function Education() {
             <FontAwesomeIcon icon={faGraduationCap} />
           </i>
           <div className={timeline.content}>
-            <h2>MASTER OF SCIENCE / COMPUTER SCIENCE</h2>
+            <h2>Master of Science / Computer Science</h2>
             <p>Cumulative GPA: 4.0/4.0</p>
             <hr></hr>
 
@@ -44,7 +44,8 @@ function Education() {
             <FontAwesomeIcon icon={faGraduationCap} />
           </i>
           <div className={timeline.content}>
-            <h2>APP ACADEMY OPEN FULL-STACK SOFTWARE ENGINEER BOOTCAMP</h2>
+            <h2>App Academy Open</h2>
+            <h2>Full-stack Software Engineer Bootcamp</h2>
             <hr></hr>
 
             <p>
@@ -72,7 +73,7 @@ function Education() {
             <FontAwesomeIcon icon={faGraduationCap} />
           </i>
           <div className={timeline.content}>
-            <h2>MERIT AMERICA IT BOOTCAMP</h2>
+            <h2>Merit America IT Bootcamp</h2>
             <hr></hr>
 
             <p>
@@ -99,7 +100,7 @@ function Education() {
             <FontAwesomeIcon icon={faGraduationCap} />
           </i>
           <div className={timeline.content}>
-            <h2>ASSOCIATE OF APPLIED SCIENCE / COMPUTER SCIENCE</h2>
+            <h2>Associate of Applied Science / Computer Science</h2>
             <p>Cumulative GPA: 4.0/4.0</p>
             <hr></hr>
 
@@ -131,8 +132,8 @@ function Education() {
           </i>
           <div className={timeline.content}>
             <h2>
-              BACHELOR’S DEGREE IN BUSINESS ADMINISTRATION / HUMAN RESOURCE
-              MANAGEMENT
+              Bachelor's in Business Administration / Human Resource
+              Management
             </h2>
             <p>Cumulative GPA: 3.5/4.0</p>
             <hr></hr>

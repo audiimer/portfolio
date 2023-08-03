@@ -33,7 +33,7 @@ function Certification() {
             <FontAwesomeIcon icon={faTrophy} />
           </i>
           <div className={timeline.content}>
-            <h2>GOOGLE IT SUPPORT</h2>
+            <h2>Google IT Support</h2>
             <p>By Google.com / Coursera</p>
             <hr></hr>
 
@@ -53,7 +53,7 @@ function Certification() {
             <FontAwesomeIcon icon={faTrophy} />
           </i>
           <div className={timeline.content}>
-            <h2>HTML, CSS, AND JAVASCRIPT FOR WEB DEVELOPERS</h2>
+            <h2>HTML, CSS, and JavaScript for Web Developers</h2>
             <p>By Yaakov Chaikin / Coursera</p>
             <hr></hr>
 
@@ -72,11 +72,9 @@ function Certification() {
             <FontAwesomeIcon icon={faTrophy} />
           </i>
           <div className={timeline.content}>
-            <h2>THE COMPLETE PYTHON BOOTCAMP FROM ZERO TO HERO</h2>
+            <h2>The Complete Python Bootcamp from zero to hero</h2>
             <p>By Jose Portilla / Udemy</p>
-            <h5>Skills Learned:</h5>
             <hr></hr>
-
             <p>
               Completed the course The Complete Python Bootcamp From Zero to
               Hero that covered the foundations of the programming language.
