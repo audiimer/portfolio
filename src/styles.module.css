@@ -961,6 +961,9 @@ strong {
 
 /* -----------------------------------------------SMALL DEVICES (TABLETS): 576px ≤ width ≤ 767px----------------------------------------------- */
 @media (min-width: 576px) and (max-width: 767px) {
+  .separator hr {
+    width: 550px;
+  }
 
   /* ---------- INTRO CARD ---------- */
   .intro {
@@ -1158,6 +1161,15 @@ strong {
    MEDIUM DEVICES (LAPTOPS SMALL/MEDIUM): 768px ≤ width ≤ 991px
 ----------------------------------------------- */
 @media only screen and (min-width: 768px) and (max-width: 991px) {
+  .separator hr {
+    width: 650px;
+    /* or whatever looks good      */
+    /* margin: 1rem auto; */
+    /* auto => centred             */
+    /* border: 0; */
+    /* border-top: 2px solid currentColor; */
+    /* opacity: .3; */
+  }
 
   /* ---------- INTRO CARD ---------- */
   .intro {
@@ -1343,6 +1355,9 @@ strong {
    LARGE & EXTRA-LARGE DEVICES (LAPTOPS / DESKTOPS): width ≥ 992px
 ----------------------------------------------- */
 @media only screen and (min-width: 992px) {
+  .separator hr {
+    width: 650px;
+  }
 
   /* Make .introTitle underline‐on‐hover exactly the same at all desktop sizes */
   .intro> :not(.slice) {
