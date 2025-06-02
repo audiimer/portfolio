@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.0db46f07.css",
+    "main.css": "/portfolio/static/css/main.1eb5c6b1.css",
     "main.js": "/portfolio/static/js/main.c374d621.js",
     "static/media/Lehigh.jpg": "/portfolio/static/media/Lehigh.69019cb0287d787fc413.jpg",
     "static/media/fa-solid-900.ttf": "/portfolio/static/media/fa-solid-900.4a2cd718d7031b732e76.ttf",
@@ -15,11 +15,11 @@
     "static/media/fa-v4compatibility.ttf": "/portfolio/static/media/fa-v4compatibility.0e3a648be390bd8cb094.ttf",
     "static/media/fa-v4compatibility.woff2": "/portfolio/static/media/fa-v4compatibility.68577e40f3e70067b5da.woff2",
     "index.html": "/portfolio/index.html",
-    "main.0db46f07.css.map": "/portfolio/static/css/main.0db46f07.css.map",
+    "main.1eb5c6b1.css.map": "/portfolio/static/css/main.1eb5c6b1.css.map",
     "main.c374d621.js.map": "/portfolio/static/js/main.c374d621.js.map"
   },
   "entrypoints": [
-    "static/css/main.0db46f07.css",
+    "static/css/main.1eb5c6b1.css",
     "static/js/main.c374d621.js"
   ]
 }
