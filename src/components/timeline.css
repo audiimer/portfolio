@@ -1,0 +1,56 @@
+/* -----------------------------------------------NEW TIMELINE--------------------------------------------------------- */
+.vertical-timeline-element-content {
+    box-shadow: 0 0.25em 0.5em 0 rgba(0, 0, 0, 0.25),
+        0 0.4em 1.25em 0 rgba(0, 0, 0, 0.15) !important;
+    padding: 2em 3em !important;
+}
+
+.date {
+    color: rgb(201, 251, 255);
+}
+
+#description {
+    margin: 1.5em 0 2em 0;
+}
+
+.button {
+    text-decoration: none;
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    color: white;
+}
+
+.workButton {
+    font-weight: 500;
+    padding: 0.8rem 1.6rem;
+    background: #007885;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.workButton:hover {
+    background-color: #0E524E;
+}
+
+.schoolButton {
+    font-weight: 500;
+    padding: 0.8rem 1.6rem;
+    background: #83541E;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.schoolButton:hover {
+    background-color: #502D0E;
+}
+
+@media only screen and (max-width: 1700px) {
+    .vertical-timeline-element-date {
+        display: block !important;
+        float: none !important;
+        color: rgb(44, 44, 44);
+        margin-top: 1.5em;
+    }
+}

@@ -1,55 +1,263 @@
-/* Reusable Color Variables */
-:root {
-  --background-color: #3aafa9;
-  --header-color: #17242a;
-  --container-color: #2b7a77;
-  --primary-color: #def2f1;
-  --secondary-color: #eedac1;
-  --alt-color: #13f5f5;
-}
-
-
-.modal {
-  font-size: .8rem;
-  font-weight: bold;
-  color: black;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: var(--secondary-color);
-  padding: 5px 10px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  max-width: 400px;
-  width: 90%;
-  z-index: 1;
-}
-
-.modal hr {
-  background-color: var(--container-color);
-}
+/* modal.module.css */
 
 .overlay {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+.modal {
+  position: relative;
+  background: #fff;
+  border-radius: 8px;
+  width: 600px;
+  max-width: 90%;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  padding: 0;
+  /* we handle padding in panels */
+}
+
 .closeBtn {
   position: absolute;
-  top: 10px;
-  right: 10px;
-  padding: 5px;
-  background: none;
+  top: 12px;
+  right: 12px;
+  background: transparent;
   border: none;
-  font-size: 16px;
-  color: #999;
+  font-size: 1.2rem;
   cursor: pointer;
+  color: #666;
+}
+
+.modalContent {
+  display: flex;
+  min-height: 350px;
+}
+
+/* left panel */
+.leftPanel {
+  flex: 1;
+  background: linear-gradient(110deg, #E8F3F0 0%, #3D6762 100%);
+  color: white;
+  text-align: center;
+  padding: 30px 20px;
+  position: relative;
+}
+
+.avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+  border: 3px solid rgba(255, 255, 255, 0.6);
+}
+
+.name {
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.role {
+  margin: 5px 0 20px;
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+
+/* right panel */
+.rightPanel {
+  flex: 2;
+  padding: 25px 30px;
+  color: #333;
+}
+
+.sectionTitle {
+  margin: 0 0 10px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 5px;
+}
+
+.infoRow {
+  display: flex;
+  justify-content: space-between;
+  margin: 12px 0;
+}
+
+.label {
+  font-weight: 500;
+  opacity: 0.7;
+}
+
+.value {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.projectSection {
+  display: flex;
+  justify-content: space-between;
+  margin: 12px 0 20px;
+}
+
+.subTitle {
+  margin: 0;
+  font-size: 0.95rem;
+  opacity: 0.8;
+}
+
+/* social icons at bottom */
+.socialIcons {
+  display: flex;
+  gap: 15px;
+  margin-top: auto;
+  /* push to bottom */
+}
+
+.socialIcons a {
+  font-size: 1.2rem;
+  color: #555;
+  transition: color 0.2s;
+}
+
+.socialIcons a:hover {
+  color: #000;
+}
+
+/* ============================
+   EXTRA SMALL DEVICES (PHONES)
+   width ≤ 575px
+============================ */
+@media only screen and (max-width: 575px) {
+
+  /* Make the modal narrower and allow side-margins */
+  .modal {
+    width: 90%;
+    max-width: 90%;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  /* STACK PANELS VERTICALLY */
+  .modalContent {
+    display: flex;
+    flex-direction: column;
+    min-height: auto;
+  }
+
+  /* ---------------- Left Panel ---------------- */
+  .leftPanel {
+    padding: 20px 12px;
+    text-align: center;
+    /* center everything */
+  }
+
+  .avatar {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 12px;
+    border-radius: 50%;
+  }
+
+  .name {
+    font-size: 1.2rem;
+    margin: 0 auto 4px;
+    text-align: center;
+  }
+
+  .role {
+    font-size: 0.9rem;
+    margin: 0 auto 12px;
+    opacity: 0.9;
+    text-align: center;
+  }
+
+  /* ---------------- Right Panel ---------------- */
+  .rightPanel {
+    flex: none;
+    padding: 16px 12px;
+    color: #333;
+    text-align: center;
+    /* center all text here */
+  }
+
+  .sectionTitle {
+    font-size: 1rem;
+    margin: 0 auto 8px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid #ddd;
+    width: 50%;
+    text-align: center;
+  }
+
+  /* Center each infoRow’s contents */
+  .infoRow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px 0;
+  }
+
+  .infoRow .label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    opacity: 0.7;
+    text-align: center;
+  }
+
+  .infoRow .value {
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-top: 3px;
+    text-align: center;
+  }
+
+  /* If using projectSection, center its subtitle/value too */
+  .projectSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px 0 16px;
+  }
+
+  .subTitle {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin-bottom: 4px;
+    text-align: center;
+  }
+
+  /* ---------------- Social Icons ---------------- */
+  .socialIcons {
+    display: flex;
+    justify-content: center;
+    /* center the icons row */
+    gap: 15px;
+    margin-top: 16px;
+  }
+
+  .socialIcons a {
+    font-size: 1.3rem;
+    color: #555;
+    transition: color 0.2s;
+  }
+
+  .socialIcons a:hover {
+    color: #000;
+  }
+
+  /* ---------------- Close Button ---------------- */
+  .closeBtn {
+    top: 8px;
+    right: 8px;
+    font-size: 1rem;
+  }
 }

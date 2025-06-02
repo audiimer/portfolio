@@ -1,63 +1,103 @@
-@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
-
-@font-face {
-  font-family: 'sf_burlington_scriptbold';
-  src: url("./fonts/SF_Burlington_Script_Bold-webfont.woff") format('woff');
-
-  font-weight: normal;
-  font-style: normal;
-}
-
-
-:root {
-  --background-color: #3aafa9;
-  --header-color: #17242a;
-  --container-color: #2b7a77;
-  --primary-color: #def2f1;
-  --secondary-color: #eedac1;
-  --alt-color: #13f5f5;
-
-
-}
+@import "~@fortawesome/fontawesome-free/css/all.min.css";
 
 /* -------------------------------------------------------GENERAL CSS--------------------------------------------------------------- */
-body {
-  margin: 0 auto;
-  background: linear-gradient(110deg, var(--background-color)40%, var(--secondary-color)100%);
-  font-family: 'Josefin Sans', sans-serif;
-  color: var(--primary-color);
-  letter-spacing: 0.09em;
-  font-size: 1.1rem;
-  line-height: 1.5;
+/* --- Creative faceted background --- */
+:root {
+  --page‑bg: #46422F;
+  /* taken from bottom of Lehigh.jpg           */
+  --page‑bg‑light: #646149;
+  /* 20‑30 % lighter for a soft vertical blend */
 }
+
+/* ---------------- page background ---------------- */
+/* ---------------- PAGE BACKGROUND ---------------- */
+body {
+  /* sky blue ➜ golden cloud ➜ pale stone ➜ soft sage ➜ almost‑white */
+  background:
+    linear-gradient(to bottom,
+      #A9C8EC 0,
+      /* pale sky */
+      #A9C8EC 280px,
+
+      #F6E6C9 720px,
+      /* warm, sun‑lit clouds */
+      #F6E6C9 1000px,
+
+      #DCD2B5 1350px,
+      /* pale limestone */
+      #DCD2B5 1650px,
+
+      #8E9575 2150px,
+      /* soft sage‑green lawn */
+      #f3e3e3 2850px
+      /* nearly white for long pages */
+    );
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  color: #222;
+  /* stays readable on the lighter backdrop */
+}
+
+/* optional—adds very subtle sun rays so the top feels lively */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(closest-side at 50% 0,
+      rgba(255, 255, 255, .5) 0%,
+      rgba(255, 255, 255, 0) 60%);
+  mix-blend-mode: screen;
+  opacity: .35;
+  /* dial this down if it feels too “glowy” */
+}
+
+/* ---------------- HERO BACKDROP ---------------- */
+.background {
+  position: relative;
+  min-height: 80vh;
+  padding: 70px 0;
+  background: url("images/Lehigh.jpg") center/cover no-repeat;
+
+  /* fade the image so the page gradient shows through */
+
+  mask-image: linear-gradient(to bottom,
+      rgba(0, 0, 0, 1) 85%,
+      rgba(0, 0, 0, 0) 100%);
+}
+
+
+
 
 strong {
   color: #fff;
 }
 
 
-.button {
-  margin-top: 20px;
-  padding: 10px 15px;
-  color: var(--primary-color);
-  background: var(--header-color);
-  cursor: pointer;
-  transition: box-shadow 0.5s ease, color 0.5s ease;
-  text-decoration: none;
-  text-align: center;
-}
-
-.button:hover {
-  color: var(--alt-color);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-}
-
 .btn {
-  border-radius: 30px;
+  font-family: inherit;
+  /* ensures it inherits from body */
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1;
+  padding: 0.8rem 1.6rem;
+  background: #007885;
+  color: #F5F7FA;
   border: none;
-  line-height: 1.5;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  min-width: 140px;
+  text-align: center;
+  transition: background 0.2s;
 }
+
+.btn:hover {
+  background: #0E524E;
+}
+
 
 .icon {
   padding: 10px 15px;
@@ -66,321 +106,488 @@ strong {
 }
 
 
-
+/* -------------------------------------------------------Header--------------------------------------------------------------- */
+/* ---------- HEADER ---------- */
 .header {
-  border-bottom: 10px solid rgb(0, 0, 0);
-  border-radius: 2px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  background-color: var(--header-color);
-  padding: 20px;
+  justify-content: space-between;
+  background-color: #0A2A3D;
+  /* teal/green; tweak to your brand color */
+  padding: 0 1.5rem;
+  height: 64px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: static;
 }
 
-/* -------------------------------------------------------NAVBAR--------------------------------------------------------------- */
-.hamburger {
+#bio,
+#journey {
+  scroll-margin-top: 80px;
+}
+
+.logo img {
   height: 40px;
-  width: 40px;
-  padding: 0.5rem;
-  border-radius: 50%;
-  background-color: #222525;
-  cursor: pointer;
-  transition: background-color 0.2s ease-in-out;
-  position: absolute;
-  top: 50%;
-  right: 25px;
-  transform: translateY(-50%);
-  display: none;
+  width: auto;
 }
 
-.hamburger:hover {
-  background-color: var(--background-color);
-}
-
-.navigationMenu {
-  margin-left: auto;
-}
-
-.navbar {
-  width: 100%;
+/* nav */
+.navList {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: relative;
-  padding: 0.5rem 0rem;
-  z-index: 0;
-}
-
-.navbar ul {
+  gap: 2rem;
+  margin: 0;
   padding: 0;
   list-style: none;
-  display: flex;
-
 }
 
-.navbar ul li {
-  margin: 0 1rem;
-}
-
-.navbar ul li a {
-  display: block;
+.navItem button {
+  background: none;
+  border: none;
+  color: #fff;
   font-size: 1rem;
-  text-decoration: none;
-  text-align: center;
-  color: #ffffff;
-  font-weight: bold;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0.5rem 0.75rem;
+  transition: background-color 0.2s;
+}
+
+.navItem button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
   border-radius: 4px;
-  transition: background-color 0.3s ease;
-
 }
 
-.navbar ul li a:hover {
-  background-color: #333;
-  color: var(--secondary-color);
-}
 
-/* NAVBAR COLLAPSE ANIMATION */
-@keyframes navbarExpanded {
-  from {
-    max-height: 0;
-    overflow: hidden;
-  }
-
-  to {
-    max-height: 500px;
-    overflow: hidden;
-  }
-}
-
-@keyframes navbarCollapsed {
-  from {
-    max-height: 500px;
-    overflow: hidden;
-  }
-
-  to {
-    max-height: 0;
-    overflow: hidden;
-  }
-}
 
 /* -------------------------------------------------------LOGO CSS--------------------------------------------------------------- */
 
-.logo {
-  color: #fff;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
 
 /* --------------------------------------------------INTRO CSS (MAIN PICTURE)---------------------------------------------------------- */
-.letter {
 
-  display: inline-block;
-  transition: transform 0.3s ease-in-out;
+
+
+/* ---------- PARALLAX TRIANGLES ---------- */
+.slice {
+  position: absolute;
+  width: 130%;
+  height: 130%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  /* optional, but keeps links clickable   */
+  will-change: transform;
+  /* optional, but scrolls a bit smoother  */
+  z-index: 0;
 }
 
-.letter:hover {
-  color: var(--secondary-color);
-  animation: rubberBandIn 0.2s forwards;
+.sliceTop {
+  background: #38210E;
+  clip-path: polygon(0% 100%, 100% 90%, 42% 42%, 0% 0%);
+  transform: translateY(calc(var(--scrollY) * .45));
+  /* 25 % speed */
 }
 
-.letter:not(:hover) {
-  animation: rubberBandOut 0.5s forwards;
+.sliceRight {
+  background: #0E524E;
+  clip-path: polygon(100% 0, 100% 100%, 35% 100%);
+  transform: translateY(calc(var(--scrollY) * .45));
+  /* 45 % speed */
 }
 
-/* Letters Animation (Rubber Band Effect) */
-@keyframes rubberBandIn {
-  0% {
-    transform: scale(1);
-  }
-
-  30% {
-    transform: scale(1.05);
-  }
-
-  40% {
-    transform: scale(1.10);
-  }
-
-  50% {
-    transform: scale(1.15);
-  }
-
-  65% {
-    transform: scale(1.20);
-  }
-
-  100% {
-    transform: scale(1.25);
-  }
+.intro> :not(.slice) {
+  position: relative;
+  /* new stacking context                     */
+  z-index: 1;
+  /* sits above the triangles (which are 0)   */
 }
 
-@keyframes rubberBandOut {
-  0% {
-    transform: scale(1);
-  }
-
-  10% {
-    transform: scale(1.05);
-  }
-
-  30% {
-    transform: scale(0.95);
-  }
-
-  50% {
-    transform: scale(1.25);
-  }
-
-  100% {
-    transform: scale(1);
-  }
-}
-
-
+/* ---------- INTRO CARD ---------- */
 .intro {
-  margin: 200px 200px 300px 200px;
-  padding: 10px;
+  background: #0A2A3D;
+  padding: 2rem;
+  border-radius: 1rem;
   display: flex;
   justify-content: space-around;
   align-items: center;
+  position: relative;
+  overflow: hidden;
+  /* clips the triangles to the card      */
+}
 
-  background:
-    linear-gradient(to right, black 8px, transparent 4px) 0 0,
-    linear-gradient(to left, black 8px, transparent 4px) 100% 100%,
-    linear-gradient(to bottom, black 8px, transparent 4px) 0 0,
-    linear-gradient(to top, black 8px, transparent 4px) 100% 100%;
-
-  background-repeat: no-repeat;
-  background-size: 50px 80px;
+/* ---------- TYPOGRAPHY & IMAGE ---------- */
+.intro h1 {
+  font-size: 2.5rem;
+  color: white;
 }
 
 .intro p {
   font-size: 1.5rem;
 }
 
-.intro h1 {
-  font-size: 2.5rem;
-}
-
 .imgcontainer {
-  border: solid 10px var(--header-color);
+  /* border:10px solid red; */
   border-radius: 50%;
-  padding: 0 auto;
-  max-height: 370px;
+  max-height: 360px;
+
 }
 
 .imgcontainer img {
-  border: solid 10px var(--secondary-color);
+  border: 10px solid var(--secondary-color);
   max-width: 350px;
   max-height: 350px;
   border-radius: 50%;
 }
 
+/* underline‑on‑hover list */
 .introTitle {
   list-style: none;
+
   padding: 0;
-  max-width: 600px;
+  max-width: 400px;
 }
+
+/* ---------- each list item ---------- */
 
 .introTitle li {
-  color: #ffffff;
-  text-decoration: none;
-  letter-spacing: 0.15em;
-  display: inline-block;
-  padding: 25px 0px;
+  color: #fff;
+  letter-spacing: .12em;
+  padding: 15px 0;
   position: relative;
+
+  /* default underline length = 70 % */
+  --underline: 70%;
 }
 
+/* first item uses a full width underline */
+.introTitle li:first-child {
+  --underline: 100%;
+}
+
+/* collapsed line */
 .introTitle li::after {
   content: "";
   position: absolute;
   bottom: 10px;
   left: 50%;
-  display: block;
-  background: none repeat scroll 0 0 transparent;
-  height: 2px;
+  /* start dead centre */
   width: 0;
-  background: #fff;
-  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  height: 2px;
+  background: currentColor;
+  /* inherits text colour */
+  transition: width .3s ease, left .3s ease;
 }
 
-.introTitle li:hover::after {
-  width: 100%;
+/* grow to the target length on hover (or keyboard focus) */
+.introTitle li:hover::after,
+.introTitle li:focus-within::after {
+  width: var(--underline);
   left: 0;
 }
 
-
 /* -------------------------------------------------------ABOUT SECTION CSS--------------------------------------------------------------- */
+.actionRow {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.projectList {
+  margin: 0;
+  padding: 0;
+  line-height: 1.8;
+  position: relative;
+  right: 100px;
+  width: 200%;
+}
+
+.projectList li {
+  list-style: none;
+  margin-bottom: 1rem;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.codeIcon {
+  position: absolute;
+  left: 0;
+  top: 5px;
+  font-size: 0.95rem;
+  color: #fff;
+}
+
+.projectList a {
+  color: #F5F7FA;
+  text-decoration: underline;
+  font-size: 0.95rem;
+  transition: color .2s;
+}
+
+.projectList a:hover {
+  color: #00C4CC;
+}
+
+.eduList li {
+  list-style: none;
+}
+
+.projectList,
+.eduList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* give each LI room for an icon */
+.projectList li,
+.eduList li {
+  position: relative;
+  padding-left: 1.8em;
+  margin-bottom: 1rem;
+}
+
+/* projects → fa-code (\f121) */
+.projectList li::before {
+  content: "\f121";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  /* solid style */
+  position: absolute;
+  left: 0;
+  top: 0.1em;
+  /* tweak vertical alignment */
+  font-size: 0.95rem;
+  color: #F5F7FA;
+}
+
+/* education → fa-graduation-cap (\f19d) */
+.eduList li::before {
+  content: "\f19d";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  position: absolute;
+  left: 0;
+  top: 0.1em;
+  font-size: 0.95rem;
+  color: #F5F7FA;
+}
+
+.projectList a {
+  text-decoration: none;
+}
 
 .separator {
-  margin: 0 100px 0 100px;
+  margin: 0 100px;
 }
 
 .separator h1 {
-  font-size: 3.5rem;
   font-family: sf_burlington_scriptbold;
-
+  font-size: 3.5rem;
   margin: 0 auto;
 }
 
-.separator h1::before {
-  content: "";
-  margin-right: 20px;
-
+.bioHero {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 4rem;
+  padding: 1.5rem 6rem;
+  color: #F5F7FA;
+  background:
+    url("data:image/svg+xml,%3Csvg ...wave-path…%3E") repeat-x,
+    radial-gradient(circle at 20% 0%, #0A2A3D 0%, #024452 50%, #002B37 100%);
+  /* max-width: 1000px; */
+  margin: 4rem auto;
+  border-radius: 18px;
+  box-shadow: 0 20px 35px -10px rgba(0, 0, 0, .35);
+  overflow: hidden;
 }
 
-.container {
+/* ---- left pane ---- */
+.bioSide {
+  text-align: center;
+  align-self: start;
+}
+
+.avatarWrap {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  margin: 0 auto 1rem;
+}
+
+.avatarWrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #0E524E;
+}
+
+.avatarBadge {
+  position: absolute;
+  right: -6px;
+  bottom: -6px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  border-radius: 50%;
+  background: #00A0B0;
+}
+
+.enName {
+  font-size: 1.35rem;
+  font-weight: 600;
+  margin: .5rem 0;
+}
+
+.nativeName {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.role {
+  margin: .25rem 0;
+  font-weight: 600;
+}
+
+.org {
+  margin: 0 0 1.5rem;
+  opacity: .8;
+}
+
+.socialRow {
   display: flex;
   justify-content: center;
-  margin: 40px 100px;
-  line-height: 2rem;
-  transition: all 0.13s ease-in;
-
+  gap: 1rem;
+  font-size: 1.35rem;
 }
 
-.aboutsection1 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.socialRow a {
+  color: #F5F7FA;
+  opacity: .8;
+  transition: opacity .2s;
+}
+
+.socialRow a:hover {
+  opacity: 1;
+}
+
+/* ---- right pane ---- */
+.bioMain h1 {
+  font-size: 2rem;
+  margin-top: 0;
+}
+
+.bioMain>p {
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.cvBtn,
+.contactBtn {
+  padding: 0.8rem 1.6rem;
+  min-width: 140px;
+  background: #007885;
+  border: none;
+  border-radius: 8px;
+  color: #F5F7FA;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
   text-align: center;
-  min-height: 100vh;
+  transition: background .2s;
+}
+
+.cvBtn:hover,
+.contactBtn:hover {
+  background: #0E524E;
+}
+
+.infoGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+}
+
+.infoGrid h2 {
+  font-size: 1.35rem;
+  margin-bottom: .8rem;
+}
+
+.infoGrid ul {
+  margin: 0;
+  padding-left: 1.2rem;
+  line-height: 1.8;
 }
 
 
 
-.aboutsection1 img {
-  width: 250px;
-  height: 300px;
-  border-radius: 50%;
+.journeyTitle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.15em;
+  /* keeps prints snug to text */
 }
 
-.iconWrapper {
-  display: flex;
-  flex-direction: column;
+/* three prints (decorative) */
+.prints {
+  display: inline-flex;
+  gap: 0.25em;
+  font-size: 0.55em;
+  /* a little smaller than H1 */
+  transform: rotate(-10deg) translateY(-2px);
+  /* playful tilt */
+  opacity: 0.85;
+  /* subtle, not overpowering */
 }
 
-.aboutsection2 {
-  padding: 0 0px 0 50px;
+.separator {
+  /* centers everything inside the <section> */
+  text-align: center;
+  /* headings + inline elements */
+  margin: 0 auto 3rem;
+  /* optional bottom spacing     */
 }
 
-.aboutsection2 p {
-  margin-bottom: 30px;
+.separator hr {
+  width: 1100px;
+  /* or whatever looks good      */
+  margin: 1rem auto;
+  /* auto => centred             */
+  border: 0;
+  border-top: 2px solid currentColor;
+  opacity: .3;
 }
 
-.aboutsection2 p::before {
-  content: "→   ";
-  font-size: 1.5;
-  font-weight: bolder;
+.hiddenLeft {
+  opacity: 0;
+  transform: translateX(-100%);
 }
 
-.aboutsection2 button {
-  margin: 0 30px auto 0;
+@keyframes slideInBounce {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+
+  60% {
+    transform: translateX(20px);
+    opacity: 1;
+  }
+
+  80% {
+    transform: translateX(-10px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
 }
 
-.btnContainer {
-  margin-bottom: 40px;
-  display: flex;
-  justify-content: space-evenly;
+.animate {
+  animation: slideInBounce 0.8s ease-out forwards;
 }
 
 /* ------------------------------------------------------- TIMELINE BUTTONS CSS --------------------------------------------------------------- */
@@ -392,16 +599,15 @@ strong {
   backface-visibility: hidden;
 }
 
-.timelinebtn {
-  font-family: 'Josefin Sans', sans-serif;
+/* .timelinebtn {
+  font-family: sans-serif;
   color: #fff;
-  background: var(--header-color);
   border: none;
   padding: 10px 30px;
   transform: skewX(-40deg);
   cursor: pointer;
   transition: all 0.3s ease;
-}
+} */
 
 .timelinebtn:hover {
   color: var(--alt-color);
@@ -541,457 +747,791 @@ strong {
 
 /* -----------------------------------------------EXTRA SMALL DEVICES(PHONES)--------------------------------------------------------- */
 
+
+
 @media only screen and (max-width: 575px) {
 
-  .hamburger {
-    display: block;
+  /* Prevent stray horizontal scrollbars */
+  html,
+  body {
+    overflow-x: hidden;
   }
 
-  .navbar ul {
+  /* ---------- INTRO CARD ---------- */
+  .background {
+    min-height: 60vh;
+  }
+
+  hr {
     display: none;
-    position: absolute;
-    top: 110px;
-    right: 0px;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
   }
-
-  .navbar ul li {
-    text-align: center;
-  }
-
-  .navigationMenu li a {
-    padding: 1.5rem;
-  }
-
-
-  .navigationMenu.expanded ul {
-    animation: navbarExpanded .5s ease-in-out forwards;
-    display: block;
-  }
-
-  .navigationMenu.collapsed ul {
-    animation: navbarCollapsed .5s ease-in-out forwards;
-    display: block;
-  }
-
-
-
-
-  /* LOGO */
 
   .intro {
     display: flex;
     flex-direction: column;
-    margin: 100px 20px 300px 20px;
-    padding: 30px 0;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 32px 12px;
+    padding: 0.75rem;
     text-align: center;
-    background-size: 50px 30px;
-  }
-
-
-  .intro p {
-    font-size: 1.2rem;
+    border-radius: 1rem;
+    background-size: cover;
   }
 
   .intro h1 {
-    font-size: 1.5rem;
+    font-size: 1.35rem;
+    margin: 0;
   }
-
-
-  .imgcontainer {
-    max-height: 325px;
-    order: -1;
-  }
-
-  .imgcontainer img {
-    width: 300px;
-  }
-
-  /* ABOUT CSS */
-
-  .separator {
-    width: 95%;
-    margin: auto;
-    text-align: center;
-  }
-
-  .separator h1::before {
-    margin-right: 20px;
-
-  }
-
-  .container {
-    margin: 0 auto;
-    flex-direction: column;
-    align-items: center;
-
-  }
-
-  .iconWrapper {
-    display: inline-block;
-    margin-top: 20px;
-
-  }
-
-  .iconWrapper a:first-child {
-    margin-right: 30px;
-  }
-
-
-  .aboutsection1 {
-    padding-bottom: 20px;
-    margin: 0 auto;
-    min-height: auto;
-  }
-
-  .aboutsection2 {
-    padding: 0 20px;
-    font-size: .9rem;
-
-  }
-
-  .aboutsection2 h1 {
-    text-align: center;
-    font-size: 1.2rem;
-  }
-
-
-  .btnContainer {
-    justify-content: space-between;
-  }
-
-
-  .timeline {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 10px;
-  }
-
-  .timelinebtn {
-    margin: 10px;
-  }
-
-  .timelinebtn:nth-child(1),
-  .timelinebtn:nth-child(4) {
-    width: 100%;
-  }
-
-  .timelinebtn:nth-child(2),
-  .timelinebtn:nth-child(3) {
-    flex-basis: calc(50% - 20px);
-  }
-
-  /* CAROUSEL CSS */
-  .carousel {
-    width: 100%;
-    text-align: center;
-    border: none;
-  }
-
-  .carouselImage {
-    position: static !important;
-    width: 100%;
-    height: 100%;
-    object-fit: fit;
-
-  }
-
-  .carouselCaption p {
-    font-size: .8rem;
-  }
-
-  .carouselCaption a {
-    margin:0 auto;
-  }
-
-}
-
-
-/* -----------------------------------------------SMALL DEVICES(TABLETS)--------------------------------------------------------- */
-@media only screen and (min-width: 576px) and (max-width: 767px) {
-
-  .hamburger {
-    display: block;
-  }
-
-  .navbar ul {
-    display: none;
-    position: absolute;
-    top: 110px;
-    right: 0px;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
-  }
-
-  .navbar ul li {
-    text-align: center;
-  }
-
-  .navigationMenu li a {
-    padding: 1.5rem;
-  }
-
-
-  .navigationMenu.expanded ul {
-    animation: navbarExpanded .5s ease-in-out forwards;
-    display: block;
-  }
-
-  .navigationMenu.collapsed ul {
-    animation: navbarCollapsed .5s ease-in-out forwards;
-    display: block;
-  }
-
-
-  /* LOGO */
-
-  .intro {
-    display: flex;
-    flex-direction: column;
-    margin: 100px 40px 300px 40px;
-    padding: 30px 0;
-    text-align: center;
-  }
-
-
-  .introTitle a {
-    font-size: .9rem;
-  }
-
-  .imgcontainer {
-
-    max-height: 325px;
-
-    order: -1;
-  }
-
-  .imgcontainer img {
-    width: 300px;
-  }
-
-
-  /* ABOUT CSS */
-  .separator {
-    width: 95%;
-    margin: auto;
-    text-align: center;
-  }
-
-  .separator h1::before {
-    margin-right: 85px;
-
-  }
-
-  .container {
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-
-  .iconWrapper {
-    display: inline-block;
-    margin-top: 20px;
-
-  }
-
-  .iconWrapper a:first-child {
-    margin-right: 30px;
-  }
-
-
-  .aboutsection2 {
-    margin: 0 40px;
-    padding: 0;
-  }
-
-  .aboutsection1 {
-    padding-bottom: 20px;
-    min-height: auto;
-  }
-
-  .aboutsection2 h1 {
-    text-align: center;
-  }
-
-  .btnContainer {
-    justify-content: space-between;
-  }
-
-  .timeline {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 10px;
-  }
-
-  .timelinebtn {
-    margin: 10px;
-  }
-
-  .timelinebtn:nth-child(1),
-  .timelinebtn:nth-child(4) {
-    width: 100%;
-  }
-
-  .timelinebtn:nth-child(2),
-  .timelinebtn:nth-child(3) {
-    flex-basis: calc(50% - 20px);
-  }
-
-  .timelinebtn p {
-    width: 100%;
-  }
-
-  /* CAROUSEL CSS */
-  .carousel {
-    width: 95%;
-    text-align: center;
-  }
-
-  .carouselImage {
-    position: static !important;
-    width: 100%;
-    height: 100%;
-    object-fit: fit;
-
-  }
-
-  .carouselCaption p {
-    font-size: .8rem;
-  }
-
-  .carouselCaption a {
-    margin:0 auto;
-  }
-
-}
-
-/* -----------------------------------------------MEDIUM DEVICES(LAPTOPS, DESKTOPS)--------------------------------------------------------- */
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-
-
-  .navbar {
-    font-size: .6rem;
-  }
-
-  /* Styles for medium devices */
-  .intro {
-    margin: 100px 10px 300px 10px;
-    padding: 0 30px 0 30px;
-  }
-
-  .imgcontainer {
-    max-height: 295px;
-  }
-
-  .imgcontainer img {
-    width: 270px;
-
-  }
-
-
-  /* ABOUT CSS */
-  .separator {
-    width: 95%;
-    margin: auto;
-    text-align: center;
-  }
-
-  .separator h1::before {
-    margin-right: 85px;
-
-  }
-
-  .container {
-    margin: 0 40px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .iconWrapper {
-    display: inline-block;
-    margin-top: 20px;
-  }
-
-  .iconWrapper a:first-child {
-    margin-right: 30px;
-  }
-
-  .aboutsection1 {
-    padding-bottom: 20px;
-    min-height: auto;
-  }
-
-  .carousel {
-    width: 97%;
-  }
-
-}
-
-/* -----------------------------------------------LARGE DEVICES(LAPTOPS, DESKTOPS)--------------------------------------------------------- */
-@media only screen and (min-width: 992px) and (max-width: 1199px) {
-
-  .intro {
-    margin: 100px 20px 300px 20px;
-    padding: 0 20px 0 20px;
-  }
-
 
   .introTitle {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .introTitle li {
+    /* fluid type: grows from 1 rem on tiny phones
+     to 1.5 rem by the time we hit 600 px */
+    /* font-size: clamp(1rem, 4vw + .5rem, 1.5rem); */
+
+    color: #fff;
+    letter-spacing: .12em;
+    padding-block: .9em;
+    position: relative;
+
+    /* custom props that change per breakpoint */
+    --underline: 100%;
+    /* almost full‑width on small screens     */
+    --underline-thickness: 2px;
+    --underline-offset: .10em;
+    /* room for the thicker line              */
+  }
+
+  .introTitle li::after {
+    content: '';
+    position: absolute;
+    bottom: var(--underline-offset);
+    left: 50%;
+    /* collapsed in the centre */
+    width: 0;
+    height: var(--underline-thickness);
+    background: currentColor;
+    transition: width .3s ease, left .3s ease;
+  }
+
+  /* expand on hover / keyboard focus */
+  .introTitle li:hover::after,
+  .introTitle li:focus-within::after {
+    width: var(--underline);
+    left: 0;
+  }
+
+
+  .imgcontainer {
+    order: -1;
+    width: 65%;
+    max-width: 200px;
+    /* custom props that change per breakpoint */
+    --underline: 90%;
+    /* almost full‑width on small screens     */
+    --underline-thickness: 2px;
+    --underline-offset: .40em;
+    /* room for the thicker line              */
+  }
+
+  .imgcontainer img {
+    width: 100%;
+    height: auto;
+    border-width: 6px;
+  }
+
+  /* ---------- BIOGRAPHY CARD ---------- */
+  .bioHero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+    padding: 1.25rem;
+    margin: 24px 12px;
+  }
+
+  .bioSide {
+    width: 100%;
+    text-align: center;
+    margin-bottom: -40px;
+  }
+
+  .avatarWrap {
+    width: 96px;
+    height: 96px;
+  }
+
+  .avatarWrap img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+  }
+
+  .enName {
+    font-size: 1.35rem;
+    margin-bottom: 6px;
+  }
+
+  .role {
+    font-size: 0.95rem;
+    margin-bottom: 3px;
+  }
+
+  .org {
+    font-size: 0.85rem;
+    margin-bottom: 10px;
+  }
+
+  .socialRow {
+    display: flex;
+    gap: 10px;
+    font-size: 1.25rem;
+    justify-content: center;
+    margin-bottom: 14px;
+  }
+
+  /* ---------- BIO CONTENT & BUTTONS ---------- */
+  .bioMain {
+    text-align: center;
+    width: 100%;
+  }
+
+  /* Keep the two buttons side‑by‑side without wrapping */
+  .actionRow {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 0.5rem;
+    flex-wrap: nowrap;
+    /* <‑‑ stops the strange reflow */
+  }
+
+  .actionRow a,
+  .actionRow button {
+    flex: 1 1 50%;
+    /* two equal columns */
+    max-width: none;
+    width: auto;
+    margin: 0;
+    /* no extra margins = perfect alignment */
+    box-sizing: border-box;
+    text-align: center;
+  }
+
+  /* ---------- PROJECTS & EDUCATION LISTS ---------- */
+  .infoGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .infoGrid h2 {
+    font-size: 1.1rem;
+    margin-bottom: 18px;
+  }
+
+  .projectList,
+  .eduList {
+    list-style: none;
+    padding: 0 12px;
+    margin: 0;
+  }
+
+  .projectList li,
+  .eduList li {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-bottom: 0.85rem;
+  }
+
+  .projectList li a {
+    margin-left: auto;
+    display: inline-flex;
+    align-items: center;
     font-size: 1rem;
   }
 
-  .separator {
-    width: 95%;
-    margin: auto;
-    text-align: center;
-  }
+}
 
-  .separator h1::before {
-    margin-right: 85px;
+/* -------------- */
 
-  }
+/* -----------------------------------------------SMALL DEVICES (TABLETS): 576px ≤ width ≤ 767px----------------------------------------------- */
+@media (min-width: 576px) and (max-width: 767px) {
 
-  /* ABOUT CSS */
-  .container {
+  /* ---------- INTRO CARD ---------- */
+  .intro {
+    margin: 60px 24px;
+    padding: 1.25rem;
+    gap: 1.25rem;
+    /* keep flex‐column and centered for tablets */
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
+    background-size: cover;
+    border-radius: 1rem;
   }
 
-  .iconWrapper {
-    display: inline-block;
-    margin-top: 20px;
-
+  .intro h1 {
+    font-size: 1.75rem;
+    margin: 0;
   }
 
-  .iconWrapper a:first-child {
-    margin-right: 30px;
+  .introTitle li {
+    /* fluid type: grows from 1 rem on tiny phones
+     to 1.5 rem by the time we hit 600 px */
+    /* font-size: clamp(1rem, 4vw + .5rem, 1.5rem); */
+
+    color: #fff;
+    letter-spacing: .12em;
+    padding-block: .9em;
+    position: relative;
+
+    /* custom props that change per breakpoint */
+    --underline: 100%;
+    /* almost full‑width on small screens     */
+    --underline-thickness: 2px;
+    --underline-offset: .10em;
+    /* room for the thicker line              */
   }
 
-  .aboutsection1 {
-    padding-bottom: 20px;
-    min-height: auto;
+  .introTitle li::after {
+    content: '';
+    position: absolute;
+    bottom: var(--underline-offset);
+    left: 50%;
+    /* collapsed in the centre */
+    width: 0;
+    height: var(--underline-thickness);
+    background: currentColor;
+    transition: width .3s ease, left .3s ease;
+  }
+
+  /* expand on hover / keyboard focus */
+  .introTitle li:hover::after,
+  .introTitle li:focus-within::after {
+    width: var(--underline);
+    left: 0;
   }
 
 
-  .aboutsection2 {
-    padding: 0 20px;
+  .imgcontainer {
+    width: 60%;
+    margin: 0 auto;
+    order: -1;
+    max-width: 250px;
+  }
+
+  .imgcontainer img {
+    width: 100%;
+    height: auto;
+    border-width: 6px;
+    border-radius: 50%;
+  }
+
+  /* ---------- BIOGRAPHY CARD ---------- */
+  .bioHero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    margin: 24px 16px;
+  }
+
+  .bioSide {
+    width: 100%;
+    text-align: center;
+    margin-bottom: -46px;
+  }
+
+  .avatarWrap {
+    width: 120px;
+    height: 120px;
+  }
+
+  .avatarWrap img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+  }
+
+  .enName {
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+  }
+
+  .role {
+    font-size: 1rem;
+    margin-bottom: 4px;
+  }
+
+  .org {
+    font-size: 0.9rem;
+    margin-bottom: 12px;
+  }
+
+  .socialRow {
+    display: flex;
+    gap: 12px;
+    font-size: 1.4rem;
+    justify-content: center;
+    margin-bottom: 16px;
+  }
+
+  /* Bio content & buttons */
+  .bioMain {
+    text-align: center;
+    width: 100%;
   }
 
 
-
-  .carousel {
-    width: 80%;
+  .actionRow {
+    display: flex;
+    flex-direction: row;
+    /* row, not column            */
+    justify-content: center;
+    /* centre them in the card     */
+    gap: 0.75rem;
+    /* space between buttons       */
+    flex-wrap: wrap;
+    /* allow wrap if really narrow */
   }
 
+  .actionRow .cvBtn,
+  .actionRow .contactBtn {
+    width: auto;
+    /* no forced full‑width        */
+    flex: 1 1 140px;
+    /* grow/shrink but stay ≥140px */
+  }
 
+  /* Projects & Education lists */
+  .infoGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .infoGrid h2 {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+
+  .projectList,
+  .eduList {
+    list-style: none;
+    padding: 0 16px;
+    margin: 0;
+  }
+
+  .projectList li,
+  .eduList li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .projectList li a {
+    margin-left: auto;
+    display: inline-flex;
+    align-items: center;
+    font-size: 1.2rem;
+  }
+
+  /* Align buttons & links */
+  .actionRow a,
+  .actionRow button {
+    display: block;
+    width: 90%;
+    max-width: 260px;
+    margin: 0.75rem auto;
+    box-sizing: border-box;
+    text-align: center;
+  }
 }
 
-/* -----------------------------------------------EXTRA LARGE DEVICES(LARGE LAPTOPS, LARGE SCREENS)--------------------------------------------------------- */
-@media only screen and (min-width: 1200px) {
-  /* Styles for extra large devices */
+/* -----------------------------------------------
+   MEDIUM DEVICES (LAPTOPS SMALL/MEDIUM): 768px ≤ width ≤ 991px
+----------------------------------------------- */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+  /* ---------- INTRO CARD ---------- */
+  .intro {
+    margin: 80px 20px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+    background-size: cover;
+    border-radius: 1rem;
+  }
+
+  .intro h1 {
+    font-size: 2.5rem;
+    margin: 0;
+  }
+
+  .imgcontainer {
+    width: 40%;
+    max-width: 300px;
+    margin-right: 2rem;
+  }
+
+  .imgcontainer img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+  }
+
+  /* underline-on-hover list on the right side of image */
+  .introTitle {
+    list-style: none;
+    padding: 0;
+    max-width: 400px;
+  }
+
+  .introTitle li {
+    color: #fff;
+    letter-spacing: 0.12em;
+    padding: 12px 0;
+    position: relative;
+    --underline-offset: .28em;
+    --underline-thickness: 2px;
+  }
+
+  .introTitle li:first-child {
+    --underline: 100%;
+  }
+
+  .introTitle li::after {
+    content: "";
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: currentColor;
+    transition: width .3s ease, left .3s ease;
+  }
+
+  .introTitle li:hover::after,
+  .introTitle li:focus-within::after {
+    width: var(--underline);
+    left: 0;
+  }
+
+  /* ---------- BIOGRAPHY CARD ---------- */
+  .bioHero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    padding: 2rem;
+    margin: 26px 40px;
+    border-radius: 1rem;
+  }
+
+  .bioSide {
+    text-align: center;
+  }
+
+  .bioMain {
+    text-align: left;
+    padding: 0 24px;
+  }
+
+  .avatarWrap {
+    width: 160px;
+    height: 160px;
+    margin: 0 auto 16px;
+  }
+
+  .avatarWrap img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+  }
+
+  .enName {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+
+  .role {
+    font-size: 1.2rem;
+    margin-bottom: 6px;
+  }
+
+  .org {
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+  }
+
+  .socialRow {
+    display: flex;
+    gap: 16px;
+    font-size: 1.8rem;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  /* Action buttons: side-by-side */
+  .actionRow a,
+  .actionRow button {
+    display: block;
+    /* makes them full‑row blocks      */
+    width: 90%;
+    /* → almost the whole card width   */
+    max-width: 260px;
+    margin: 0.75rem auto;
+  }
+
+  .cvBtn,
+  .contactBtn {
+    padding: 16px 24px;
+    font-size: 1.2rem;
+  }
+
+  /* Projects & Education: two columns */
+  .infoGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    padding: 0 24px;
+    align-items: start;
+  }
+
+  .infoGrid h2 {
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+  }
+
+  .projectList,
+  .eduList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .projectList li,
+  .eduList li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .projectList li>div,
+  .eduList li>div {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .projectList li a {
+    flex: 0 0 auto;
+    white-space: nowrap;
+    font-size: 1.3rem;
+  }
+}
+
+/* -----------------------------------------------
+   LARGE & EXTRA-LARGE DEVICES (LAPTOPS / DESKTOPS): width ≥ 992px
+----------------------------------------------- */
+@media only screen and (min-width: 992px) {
+
+  /* Make .introTitle underline‐on‐hover exactly the same at all desktop sizes */
+  .intro> :not(.slice) {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ---------- INTRO CARD ---------- */
+  .intro {
+    background: #0A2A3D;
+    margin: 30px 150px;
+    /* padding: 2rem 4rem; */
+    /* border-radius: 1rem; */
+    /* display: flex; */
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .intro h1 {
+    font-size: 2.5rem;
+    color: white;
+    margin: 0;
+  }
+
+  .intro p {
+    font-size: 1.5rem;
+    color: #f5f7fa;
+  }
+
+  .imgcontainer {
+    border-radius: 50%;
+    max-height: 360px;
+  }
+
+  .imgcontainer img {
+    border: 10px solid var(--secondary-color);
+    max-width: 350px;
+    max-height: 350px;
+    border-radius: 50%;
+  }
+
+  /* underline-on-hover list */
+  .introTitle {
+    list-style: none;
+    padding: 0;
+    max-width: 400px;
+  }
+
+  .introTitle li {
+    color: #fff;
+    letter-spacing: 0.12em;
+    padding: 15px 0;
+    position: relative;
+    --underline-offset: .35em;
+  }
+
+  .introTitle li:first-child {
+    --underline: 100%;
+  }
+
+  .introTitle li::after {
+    content: "";
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: currentColor;
+    transition: width .3s ease, left .3s ease;
+  }
+
+  .introTitle li:hover::after,
+  .introTitle li:focus-within::after {
+    width: var(--underline);
+    left: 0;
+  }
+
+  /* ---------- BIOGRAPHY CARD ---------- */
+  .bioHero {
+    display: grid;
+    /* grid-template-columns: 1fr 1fr; */
+    /* gap: 2rem; */
+    padding: 2rem;
+    margin: 26px 150px;
+    border-radius: 1rem;
+  }
+
+  .bioSide {
+    text-align: center;
+  }
+
+  .bioMain {
+    text-align: left;
+    padding: 0 24px;
+  }
+
+  .avatarWrap {
+    width: 160px;
+    height: 160px;
+    margin: 0 auto 16px;
+  }
+
+  .avatarWrap img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+  }
+
+  .enName {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+
+  .role {
+    font-size: 1.2rem;
+    margin-bottom: 6px;
+  }
+
+  .org {
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+  }
+
+  .socialRow {
+    display: flex;
+    gap: 16px;
+    font-size: 1.8rem;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  /* Action buttons: side-by-side */
+  .actionRow a,
+  .actionRow button {
+    display: block;
+    /* makes them full‑row blocks      */
+    width: 90%;
+    /* → almost the whole card width   */
+    max-width: 260px;
+    margin: 0.75rem auto;
+  }
+
+  .cvBtn,
+  .contactBtn {
+    padding: 16px 24px;
+    font-size: 1.2rem;
+  }
+
+  /* Projects & Education: two columns */
+  .infoGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    padding: 0 24px;
+    align-items: start;
+  }
+
+  .infoGrid h2 {
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+  }
+
+  .projectList,
+  .eduList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .projectList li,
+  .eduList li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .projectList li>div,
+  .eduList li>div {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .projectList li a {
+    flex: 0 0 auto;
+    white-space: nowrap;
+    font-size: 1.3rem;
+  }
 }
