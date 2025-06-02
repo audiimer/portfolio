@@ -1,7 +1,7 @@
 {
   "name": "myspace",
   "version": "0.1.0",
-  "homepage": "https://audiimer.github.io/new-portfolio/",
+  "homepage": "https://audiimer.github.io/portfolio",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.4.0",
