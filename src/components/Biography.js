@@ -95,10 +95,10 @@ function Biography({ onContact }) {
         </p>
 
         <p>
-          I'm also learning how to use Drupal 11, which I started through my
-          current job as part of earning internship credits. My goal is to
-          eventually specialize in it—whether as a hobby or as a professional
-          path through freelance, contract, or permanent work.{" "}
+          I'm currently developing my skills on Drupal 11, which I started
+          through my current job as part of earning internship credits. My goal
+          is to eventually specialize in it—whether as a hobby or as a
+          professional path through freelance, contract, or permanent work.{" "}
         </p>
 
         <p>
