@@ -53,14 +53,14 @@ const CustomModal = ({ isOpen, onClose }) => (
           <a
             target="_blank"
             rel="noreferrer"
-            href="https://github.com/audiimer"
+            href="https://www.linkedin.com/in/audis-mercado/"
           >
             <FontAwesomeIcon icon={faLinkedinIn} />
           </a>
           <a
             target="_blank"
             rel="noreferrer"
-            href="https://www.linkedin.com/in/audis-mercado/"
+            href="https://github.com/audiimer"
           >
             <FontAwesomeIcon icon={faGithub} />
           </a>
