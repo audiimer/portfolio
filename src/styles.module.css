@@ -1355,9 +1355,6 @@ strong {
    LARGE & EXTRA-LARGE DEVICES (LAPTOPS / DESKTOPS): width ≥ 992px
 ----------------------------------------------- */
 @media only screen and (min-width: 992px) {
-  .separator hr {
-    width: 650px;
-  }
 
   /* Make .introTitle underline‐on‐hover exactly the same at all desktop sizes */
   .intro> :not(.slice) {

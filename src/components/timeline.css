@@ -6,7 +6,7 @@
 }
 
 .date {
-    color: rgb(201, 251, 255);
+    color: rgb(44, 44, 44);
 }
 
 #description {
@@ -50,7 +50,7 @@
     .vertical-timeline-element-date {
         display: block !important;
         float: none !important;
-        color: rgb(44, 44, 44);
+
         margin-top: 1.5em;
     }
 }

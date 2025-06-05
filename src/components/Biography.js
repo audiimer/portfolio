@@ -49,7 +49,7 @@ function Biography({ onContact }) {
 
         <h2 className={styles.enName}>Audis Mercado</h2>
 
-        <p className={styles.role}>Senior Software Analyst</p>
+        <p className={styles.role}>Senior  Software Analyst</p>
         <p className={styles.org}>Lehigh University</p>
 
         <nav className={styles.socialRow}>
