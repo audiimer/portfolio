@@ -1,12 +1,12 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.1eb5c6b1.css",
-    "main.js": "/portfolio/static/js/main.300df7df.js",
+    "main.css": "/portfolio/static/css/main.a4c67388.css",
+    "main.js": "/portfolio/static/js/main.73d1344e.js",
     "static/media/Lehigh.jpg": "/portfolio/static/media/Lehigh.69019cb0287d787fc413.jpg",
     "static/media/fa-solid-900.ttf": "/portfolio/static/media/fa-solid-900.4a2cd718d7031b732e76.ttf",
     "static/media/intropic.jpg": "/portfolio/static/media/intropic.7e8fdda89140d685ad56.jpg",
+    "static/media/amercadoresume.pdf": "/portfolio/static/media/amercadoresume.8f2a568ee738342cf94a.pdf",
     "static/media/fa-brands-400.ttf": "/portfolio/static/media/fa-brands-400.150de8eaa454d669c405.ttf",
-    "static/media/amercadoresume.pdf": "/portfolio/static/media/amercadoresume.eee39516b4938bd1f73c.pdf",
     "static/media/fa-solid-900.woff2": "/portfolio/static/media/fa-solid-900.bb975c966c37455a1bc3.woff2",
     "static/media/profilepic.jpg": "/portfolio/static/media/profilepic.cce35a55674c5f7faa33.jpg",
     "static/media/fa-brands-400.woff2": "/portfolio/static/media/fa-brands-400.e033a13ee751afc1860c.woff2",
@@ -15,11 +15,11 @@
     "static/media/fa-v4compatibility.ttf": "/portfolio/static/media/fa-v4compatibility.0e3a648be390bd8cb094.ttf",
     "static/media/fa-v4compatibility.woff2": "/portfolio/static/media/fa-v4compatibility.68577e40f3e70067b5da.woff2",
     "index.html": "/portfolio/index.html",
-    "main.1eb5c6b1.css.map": "/portfolio/static/css/main.1eb5c6b1.css.map",
-    "main.300df7df.js.map": "/portfolio/static/js/main.300df7df.js.map"
+    "main.a4c67388.css.map": "/portfolio/static/css/main.a4c67388.css.map",
+    "main.73d1344e.js.map": "/portfolio/static/js/main.73d1344e.js.map"
   },
   "entrypoints": [
-    "static/css/main.1eb5c6b1.css",
-    "static/js/main.300df7df.js"
+    "static/css/main.a4c67388.css",
+    "static/js/main.73d1344e.js"
   ]
 }
